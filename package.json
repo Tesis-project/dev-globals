@@ -17,6 +17,10 @@
         "dist",
         "src"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Tesis-project/dev-globals.git"
+    },
     "peerDependencies": {
         "class-transformer": "^0.5.1",
         "class-validator": "^0.14.1"
