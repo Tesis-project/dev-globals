@@ -1,5 +1,5 @@
 {
-  "name": "@tesis-project/dev-globals",
+    "name": "@tesis-project/dev-globals",
     "version": "1.0.2",
     "description": "",
     "main": "dist/index.js",
@@ -17,6 +17,9 @@
         "dist",
         "src"
     ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Tesis-project/dev-globals.git"
