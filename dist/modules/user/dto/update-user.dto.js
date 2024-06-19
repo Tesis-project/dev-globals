@@ -37,6 +37,10 @@ class UpdateUser_Dto extends (0, mapped_types_1.PartialType)(create_user_dto_1.C
 }
 exports.UpdateUser_Dto = UpdateUser_Dto;
 __decorate([
+    (0, class_validator_1.IsUUID)(4),
+    __metadata("design:type", String)
+], UpdateUser_Dto.prototype, "_id", void 0);
+__decorate([
     (0, class_validator_1.IsEnum)(interfaces_1.Gender_Enum, {
         message: `Status must be one of the following values: ${interfaces_1.Gender_Enum}`
     }),

@@ -2,7 +2,7 @@ import { PartialType } from '@nestjs/mapped-types';
 import { CreateUser_Dto } from './create-user.dto';
 import { Gender_Enum } from '../interfaces';
 
-import { IsEnum, IsOptional, IsPhoneNumber, IsString, MinLength, ValidateNested } from 'class-validator';
+import { IsEnum, IsOptional, IsPhoneNumber, IsString, IsUUID, MinLength, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 
 
@@ -21,6 +21,9 @@ export class Direction_Dto {
 }
 
 export class UpdateUser_Dto extends PartialType(CreateUser_Dto) {
+
+    @IsUUID(4)
+    _id: string;
 
     @IsEnum(Gender_Enum, {
         message: `Status must be one of the following values: ${Gender_Enum}`

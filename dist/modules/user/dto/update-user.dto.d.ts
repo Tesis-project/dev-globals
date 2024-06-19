@@ -6,6 +6,7 @@ export declare class Direction_Dto {
 }
 declare const UpdateUser_Dto_base: import("@nestjs/mapped-types").MappedType<Partial<CreateUser_Dto>>;
 export declare class UpdateUser_Dto extends UpdateUser_Dto_base {
+    _id: string;
     gender?: string;
     phone?: string;
     direction?: Direction_Dto;
