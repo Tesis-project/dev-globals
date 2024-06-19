@@ -11,12 +11,12 @@ export interface _paginatorModel_I {
 
 }
 
-export interface _Response_I {
+export interface _Response_I<T = any> {
 
     ok?: boolean;
     statusCode?: number;
     path?: string;
-    data?: any;
+    data?: T;
     message?: string;
     paginator?: _paginatorModel_I;
     err?: any;
