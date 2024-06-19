@@ -9,24 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUserDto = void 0;
+exports.CreateUser_Dto = void 0;
 const class_validator_1 = require("class-validator");
-class CreateUserDto {
+class CreateUser_Dto {
 }
-exports.CreateUserDto = CreateUserDto;
+exports.CreateUser_Dto = CreateUser_Dto;
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.MinLength)(3),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "name", void 0);
+], CreateUser_Dto.prototype, "name", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.MinLength)(3),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "last_name", void 0);
+], CreateUser_Dto.prototype, "last_name", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsUUID)(4),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "auth", void 0);
+], CreateUser_Dto.prototype, "auth", void 0);
 //# sourceMappingURL=create-user.dto.js.map
