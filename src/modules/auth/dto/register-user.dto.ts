@@ -10,6 +10,7 @@ export class RegisterAuth_Dto {
     @IsString()
     @MinLength(3)
     last_name: string;
+
     @IsString()
     @IsEmail()
     email: string;

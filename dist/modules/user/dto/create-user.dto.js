@@ -16,10 +16,12 @@ class CreateUserDto {
 exports.CreateUserDto = CreateUserDto;
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.MinLength)(3),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "name", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.MinLength)(3),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "last_name", void 0);
 __decorate([

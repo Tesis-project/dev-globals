@@ -1,0 +1,32 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@formkit/tempo':
+        specifier: ^0.1.1
+        version: 0.1.1
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+packages:
+
+  '@formkit/tempo@0.1.1':
+    resolution: {integrity: sha512-nepRwKnCIjukLkblqh339sSXYI6P3cqktF/T7ECj3vURW+Pd+YzTv/I/lwjRqPGmlQJG93LORodIAkvgoExIAg==}
+
+  typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  '@formkit/tempo@0.1.1': {}
+
+  typescript@5.4.5: {}
