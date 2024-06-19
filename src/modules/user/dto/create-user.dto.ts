@@ -1,6 +1,6 @@
 import { IsString, IsUUID, MinLength } from "class-validator";
 
-export class CreateUserDto {
+export class CreateUser_Dto {
 
     @IsString()
     @MinLength(3)
