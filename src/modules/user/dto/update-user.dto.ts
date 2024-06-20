@@ -26,7 +26,7 @@ export class UpdateUser_Dto extends PartialType(CreateUser_Dto) {
     _id: string;
 
     @IsEnum(Gender_Enum, {
-        message: `Status must be one of the following values: ${Gender_Enum}`
+        message: `Gender must be one of the following values: ${{ ...Gender_Enum }}`
     })
     @IsOptional()
     gender?: string;

@@ -42,7 +42,7 @@ __decorate([
 ], UpdateUser_Dto.prototype, "_id", void 0);
 __decorate([
     (0, class_validator_1.IsEnum)(interfaces_1.Gender_Enum, {
-        message: `Status must be one of the following values: ${interfaces_1.Gender_Enum}`
+        message: `Gender must be one of the following values: ${{ ...interfaces_1.Gender_Enum }}`
     }),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)

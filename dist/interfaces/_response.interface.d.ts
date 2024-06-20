@@ -19,7 +19,7 @@ export interface _Response_I<T = any> {
     statusCode?: number;
     path?: string;
     data?: T;
-    message?: string;
+    message?: any;
     paginator?: _paginatorModel_I;
     err?: any;
     context?: string;
