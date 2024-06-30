@@ -1,6 +1,6 @@
-import { SchemaKey_I } from "../../../interfaces/common";
-import { User_HiringData_I } from "../../../interfaces/hiringData";
-import { Profile_I } from "../../../interfaces/profile";
+import { SchemaKey_I } from "../../../core/interfaces/common";
+import { User_HiringData_I } from "../../../core/interfaces/hiringData";
+import { Profile_I } from "../../../core/interfaces/profile";
 import { Auth_I } from "../../auth/interfaces";
 
 
@@ -9,7 +9,6 @@ export enum Gender_Enum {
     FEMALE = "FEMALE",
     NONE = "NONE",
 }
-
 
 export interface User_I extends SchemaKey_I{
     name: string;
@@ -21,7 +20,7 @@ export interface User_I extends SchemaKey_I{
         city?: string;
         state?: string;
     }
-    auth?: Auth_I;
+    auth?: Auth_I | string;
     // profile?: Profile_I;
     // hiring_data?: User_HiringData_I;
 }

@@ -1,4 +1,4 @@
-import { SchemaKey_I } from "../../../interfaces/common";
+import { SchemaKey_I } from "../../../core/interfaces/common";
 import { Auth_I } from "../../auth/interfaces";
 export declare enum Gender_Enum {
     MALE = "MALE",
@@ -15,5 +15,5 @@ export interface User_I extends SchemaKey_I {
         city?: string;
         state?: string;
     };
-    auth?: Auth_I;
+    auth?: Auth_I | string;
 }

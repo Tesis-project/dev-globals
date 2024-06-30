@@ -1,6 +1,6 @@
 import { SchemaKey_I } from "./common";
 import { File_Model_I } from "./file";
-import { User_I } from "../modules/user/interfaces/user";
+import { User_I } from "../../modules/user/interfaces/user";
 
  export interface Profile_I extends SchemaKey_I {
     artistic_name: string;

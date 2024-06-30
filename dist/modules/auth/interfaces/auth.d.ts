@@ -1,4 +1,4 @@
-import { SchemaKey_I } from "../../../interfaces";
+import { SchemaKey_I } from "../../../core/interfaces";
 import { User_I } from "../../user/interfaces";
 export declare enum AuthStatus_Enum {
     NONE = "NONE",
@@ -19,5 +19,5 @@ export interface Auth_I extends SchemaKey_I {
     updated_at: Date;
     last_session: Date;
     status?: AuthStatus_Enum;
-    user: User_I;
+    user: User_I | string;
 }

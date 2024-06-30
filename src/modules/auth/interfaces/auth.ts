@@ -1,4 +1,4 @@
-import { SchemaKey_I } from "../../../interfaces";
+import { SchemaKey_I } from "../../../core/interfaces";
 import { User_I } from "../../user/interfaces";
 
 
@@ -28,6 +28,6 @@ export interface Auth_I extends SchemaKey_I {
 
     status?: AuthStatus_Enum;
 
-    user: User_I
+    user: User_I | string;
 
 }
