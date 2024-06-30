@@ -25,3 +25,8 @@ export function pagination_meta(page: number, limit: number, total: number): Pag
   };
 
 }
+
+export interface Pagination_I<T = []> {
+    data: T[];
+    meta: PaginationMeta_I;
+}
