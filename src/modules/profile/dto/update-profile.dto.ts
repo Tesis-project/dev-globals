@@ -2,6 +2,8 @@
 import { Type } from "class-transformer";
 import { IsOptional, IsString, MinLength, ValidateNested, IsUUID } from "class-validator";
 import { File_Model_I } from "../../../core/interfaces";
+import { PartialType } from '@nestjs/mapped-types';
+import { Create_Profile_Dto } from "./create-profile.dto";
 
 
 export class Credentials_Dto {
@@ -42,7 +44,7 @@ export class Socials_Dto {
 
 }
 
-export class Update_Profile_Dto {
+export class Update_Profile_Dto extends PartialType(Create_Profile_Dto) {
 
     @IsUUID(4)
     _id: string;

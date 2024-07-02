@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Update_Profile_Dto = exports.Socials_Dto = exports.Media_Dto = exports.Credentials_Dto = void 0;
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
+const mapped_types_1 = require("@nestjs/mapped-types");
+const create_profile_dto_1 = require("./create-profile.dto");
 class Credentials_Dto {
 }
 exports.Credentials_Dto = Credentials_Dto;
@@ -62,7 +64,7 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], Socials_Dto.prototype, "tiktok", void 0);
-class Update_Profile_Dto {
+class Update_Profile_Dto extends (0, mapped_types_1.PartialType)(create_profile_dto_1.Create_Profile_Dto) {
 }
 exports.Update_Profile_Dto = Update_Profile_Dto;
 __decorate([
