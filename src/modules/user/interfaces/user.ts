@@ -1,7 +1,7 @@
 import { SchemaKey_I } from "../../../core/interfaces/common";
 import { User_HiringData_I } from "../../../core/interfaces/hiringData";
-import { Profile_I } from "../../../core/interfaces/profile";
 import { Auth_I } from "../../auth/interfaces";
+import { Profile_I } from "../../profile/interfaces";
 
 
 export enum Gender_Enum {
@@ -21,6 +21,8 @@ export interface User_I extends SchemaKey_I{
         state?: string;
     }
     auth?: Auth_I | string;
-    // profile?: Profile_I;
+    profile?: Profile_I | string;
     // hiring_data?: User_HiringData_I;
+
+    updated_at?: Date;
 }

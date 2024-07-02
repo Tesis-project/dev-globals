@@ -1,5 +1,6 @@
 import { SchemaKey_I } from "../../../core/interfaces/common";
 import { Auth_I } from "../../auth/interfaces";
+import { Profile_I } from "../../profile/interfaces";
 export declare enum Gender_Enum {
     MALE = "MALE",
     FEMALE = "FEMALE",
@@ -16,4 +17,6 @@ export interface User_I extends SchemaKey_I {
         state?: string;
     };
     auth?: Auth_I | string;
+    profile?: Profile_I | string;
+    updated_at?: Date;
 }
