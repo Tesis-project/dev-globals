@@ -9,13 +9,14 @@ export interface User_HiringData_I extends SchemaKey_I {
 
 
 export interface User_Personal_Data_I extends SchemaKey_I {
-      address?: string;
-        city?: string;
-        phone?: string;
-        postal_code?: string;
-        rif?: string;
-        social_reason?: string;
-        state?: string;
+    address?: string;
+    city?: string;
+    phone?: string;
+    postal_code?: string;
+    rif?: string;
+    social_reason?: string;
+    state?: string;
+    updated_at?: Date;
 }
 
 export enum Banks_Enum {

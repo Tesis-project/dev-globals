@@ -11,6 +11,7 @@ export interface User_Personal_Data_I extends SchemaKey_I {
     rif?: string;
     social_reason?: string;
     state?: string;
+    updated_at?: Date;
 }
 export declare enum Banks_Enum {
     BC_BICENTENARIO = "BC_BICENTENARIO",
