@@ -20,6 +20,6 @@ export interface Profile_I extends SchemaKey_I {
         youtube?: string;
         tiktok?: string;
     };
-    user?: User_I;
+    user?: User_I | string;
     updated_at?: Date;
 }

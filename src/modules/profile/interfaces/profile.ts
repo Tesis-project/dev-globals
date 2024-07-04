@@ -24,7 +24,7 @@ import { User_I } from "../../user/interfaces";
         youtube?: string;
         tiktok?: string;
     };
-    user?: User_I;
+    user?: User_I | string;
 
     updated_at?: Date;
 

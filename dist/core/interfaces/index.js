@@ -18,4 +18,5 @@ __exportStar(require("./profile"), exports);
 __exportStar(require("./file"), exports);
 __exportStar(require("./common"), exports);
 __exportStar(require("./_response.interface"), exports);
+__exportStar(require("./mikro-orm.helpers"), exports);
 //# sourceMappingURL=index.js.map

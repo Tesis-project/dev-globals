@@ -23,7 +23,7 @@ export interface User_I extends SchemaKey_I{
     auth?: Auth_I | string;
     profile?: Profile_I | string;
 
-    hiring_data?: User_HiringData_I;
+    hiring_data?: User_HiringData_I | string;
 
     updated_at?: Date;
 }
