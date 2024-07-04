@@ -18,3 +18,7 @@ export interface _Process_Update_I<T = any> {
     update?: Partial<T>;
     _em?: EntityManager;
 }
+export interface _Process_Delete_I<T = any> {
+    find: FilterQuery<T>;
+    _em?: EntityManager;
+}
