@@ -10,7 +10,7 @@ export interface _Find_Many_I<T extends object, J extends string> {
     _em?: EntityManager;
 }
 export interface _Process_Save_I<T = any> {
-    save: FilterQuery<T>;
+    save: Partial<T>;
     _em?: EntityManager;
 }
 export interface _Process_Update_I<T = any> {
