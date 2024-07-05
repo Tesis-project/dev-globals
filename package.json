@@ -1,6 +1,6 @@
 {
     "name": "@tesis-project/dev-globals",
-    "version": "1.0.716",
+    "version": "1.0.717",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
         "@formkit/tempo": "^0.1.2",
         "@mikro-orm/core": "^6.2.9",
         "@nestjs/mapped-types": "^2.0.5",
-        "typescript": "^5.5.2"
+        "typescript": "^5.5.3"
     },
     "files": [
         "dist",

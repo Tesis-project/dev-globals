@@ -22,7 +22,7 @@ export class Direction_Dto {
 
 export class UpdateUser_Dto extends PartialType(CreateUser_Dto) {
 
-    @IsUUID(4)
+    @IsUUID(4, { message: 'Invalid UUID' })
     _id: string;
 
     @IsEnum(Gender_Enum, {

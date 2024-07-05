@@ -1,3 +1,5 @@
 export * from './create-user.dto';
 export * from './update-user.dto';
 export * from './update-personal.dto';
+export * from './user-validate.dto';
+export * from './update-bank.dto';

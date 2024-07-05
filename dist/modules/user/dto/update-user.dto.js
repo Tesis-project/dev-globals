@@ -37,7 +37,7 @@ class UpdateUser_Dto extends (0, mapped_types_1.PartialType)(create_user_dto_1.C
 }
 exports.UpdateUser_Dto = UpdateUser_Dto;
 __decorate([
-    (0, class_validator_1.IsUUID)(4),
+    (0, class_validator_1.IsUUID)(4, { message: 'Invalid UUID' }),
     __metadata("design:type", String)
 ], UpdateUser_Dto.prototype, "_id", void 0);
 __decorate([

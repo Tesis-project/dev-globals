@@ -17,4 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./create-user.dto"), exports);
 __exportStar(require("./update-user.dto"), exports);
 __exportStar(require("./update-personal.dto"), exports);
+__exportStar(require("./user-validate.dto"), exports);
+__exportStar(require("./update-bank.dto"), exports);
 //# sourceMappingURL=index.js.map

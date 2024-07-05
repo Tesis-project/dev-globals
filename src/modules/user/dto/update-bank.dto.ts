@@ -1,8 +1,9 @@
-import { IsEnum, IsPhoneNumber, IsString, MinLength } from "class-validator";
+import { IsEnum, IsPhoneNumber, IsString, MinLength, ValidateNested } from "class-validator";
 import { Banks_Enum, Payment_Type_Enum } from "../interfaces";
+import { Type } from "class-transformer";
 
 
-export class Update_Bank_Data_Dto {
+export class Bank_Data_Dto {
 
     @IsEnum(Payment_Type_Enum, {
         message: `Type must be one of the following values : ${{ ...Payment_Type_Enum }}`
@@ -28,5 +29,13 @@ export class Update_Bank_Data_Dto {
     @IsPhoneNumber()
     @MinLength(6)
     phone: string;
+
+}
+
+export class Update_Bank_Data_Dto {
+
+    @ValidateNested({ each: true })
+    @Type(() => Bank_Data_Dto)
+    payment_accounts: Bank_Data_Dto[];
 
 }
