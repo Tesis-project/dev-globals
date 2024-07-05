@@ -1,4 +1,5 @@
 export declare class Bank_Data_Dto {
+    _id: string;
     type: string;
     bank_name: string;
     number: string;

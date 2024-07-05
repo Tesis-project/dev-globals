@@ -17,6 +17,11 @@ class Bank_Data_Dto {
 }
 exports.Bank_Data_Dto = Bank_Data_Dto;
 __decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsUUID)(4),
+    __metadata("design:type", String)
+], Bank_Data_Dto.prototype, "_id", void 0);
+__decorate([
     (0, class_validator_1.IsEnum)(interfaces_1.Payment_Type_Enum, {
         message: `Type must be one of the following values : ${{ ...interfaces_1.Payment_Type_Enum }}`
     }),
