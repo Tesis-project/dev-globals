@@ -1,6 +1,7 @@
 
 import { IsDate, IsEmail, IsEnum, IsUUID } from "class-validator";
 import { AuthStatus_Enum } from "../../auth/interfaces";
+import { Type } from "class-transformer";
 
 export class User_I_Dto {
 
@@ -18,6 +19,7 @@ export class User_I_Dto {
     @IsUUID(4, { message: 'Invalid UUID' })
     user: string;
 
+    @Type(() => Date)
     @IsDate()
     created_at: Date;
 

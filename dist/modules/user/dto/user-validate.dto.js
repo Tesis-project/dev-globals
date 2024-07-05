@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User_I_Dto = void 0;
 const class_validator_1 = require("class-validator");
 const interfaces_1 = require("../../auth/interfaces");
+const class_transformer_1 = require("class-transformer");
 class User_I_Dto {
 }
 exports.User_I_Dto = User_I_Dto;
@@ -34,6 +35,7 @@ __decorate([
     __metadata("design:type", String)
 ], User_I_Dto.prototype, "user", void 0);
 __decorate([
+    (0, class_transformer_1.Type)(() => Date),
     (0, class_validator_1.IsDate)(),
     __metadata("design:type", Date)
 ], User_I_Dto.prototype, "created_at", void 0);
