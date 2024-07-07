@@ -1,5 +1,5 @@
-import { EntityManager, FilterQuery, FindOneOptions, FindOptions } from "@mikro-orm/core";
 
+import { EntityManager, FilterQuery, FindOneOptions, FindOptions } from "@mikro-orm/core";
 
 export interface _Find_One_I<T extends object, J extends string> {
     find: FilterQuery<T>,

@@ -21,3 +21,10 @@ export interface Auth_I extends SchemaKey_I {
     status?: AuthStatus_Enum;
     user: User_I | string;
 }
+export interface Session_Auth_I extends SchemaKey_I {
+    email: string;
+    created_at: Date;
+    status: string;
+    user: string;
+    token?: string;
+}
