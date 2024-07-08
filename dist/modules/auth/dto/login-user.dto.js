@@ -21,7 +21,12 @@ __decorate([
 ], LoginAuth_Dto.prototype, "email", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsStrongPassword)(),
+    (0, class_validator_1.IsStrongPassword)({
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1
+    }),
     __metadata("design:type", String)
 ], LoginAuth_Dto.prototype, "password", void 0);
 //# sourceMappingURL=login-user.dto.js.map

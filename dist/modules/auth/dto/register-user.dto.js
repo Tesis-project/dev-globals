@@ -39,7 +39,12 @@ __decorate([
 ], RegisterAuth_Dto.prototype, "role", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsStrongPassword)(),
+    (0, class_validator_1.IsStrongPassword)({
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1
+    }),
     __metadata("design:type", String)
 ], RegisterAuth_Dto.prototype, "password", void 0);
 //# sourceMappingURL=register-user.dto.js.map

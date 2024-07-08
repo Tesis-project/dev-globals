@@ -20,10 +20,15 @@ export class RegisterAuth_Dto {
         message: `Role must be one of the following values: ${{ ...User_Role_Enum }}`
     })
     @IsOptional()
-    role: string;
+    role: User_Role_Enum;
 
     @IsString()
-    @IsStrongPassword()
+    @IsStrongPassword({
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1
+    })
     password: string;
 
 }
