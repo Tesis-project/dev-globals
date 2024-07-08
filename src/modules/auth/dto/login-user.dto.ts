@@ -1,4 +1,4 @@
-import { IsEmail, IsString, IsStrongPassword, MinLength } from "class-validator";
+import { IsEmail, IsString, IsStrongPassword, Matches, MinLength } from "class-validator";
 
 
 export class LoginAuth_Dto {
@@ -8,11 +8,8 @@ export class LoginAuth_Dto {
     email: string;
 
     @IsString()
-    @IsStrongPassword({
-        minLength: 8,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1
+    @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/, {
+        message: 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number',
     })
     password: string;
 

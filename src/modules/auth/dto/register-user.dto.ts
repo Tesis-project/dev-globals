@@ -1,4 +1,4 @@
-import { IsString, IsEmail, IsStrongPassword, MinLength, IsOptional, IsEnum } from 'class-validator';
+import { IsString, IsEmail, IsStrongPassword, MinLength, IsOptional, IsEnum, Matches } from 'class-validator';
 import { User_Role_Enum } from '../interfaces';
 
 
@@ -23,11 +23,8 @@ export class RegisterAuth_Dto {
     role: User_Role_Enum;
 
     @IsString()
-    @IsStrongPassword({
-        minLength: 8,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1
+    @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/, {
+        message: 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number',
     })
     password: string;
 

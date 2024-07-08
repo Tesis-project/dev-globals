@@ -39,11 +39,8 @@ __decorate([
 ], RegisterAuth_Dto.prototype, "role", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsStrongPassword)({
-        minLength: 8,
-        minLowercase: 1,
-        minUppercase: 1,
-        minNumbers: 1
+    (0, class_validator_1.Matches)(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/, {
+        message: 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number',
     }),
     __metadata("design:type", String)
 ], RegisterAuth_Dto.prototype, "password", void 0);
