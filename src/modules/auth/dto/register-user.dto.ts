@@ -1,4 +1,5 @@
-import { IsString, IsEmail, IsStrongPassword, MinLength } from 'class-validator';
+import { IsString, IsEmail, IsStrongPassword, MinLength, IsOptional, IsEnum } from 'class-validator';
+import { User_Role_Enum } from '../interfaces';
 
 
 export class RegisterAuth_Dto {
@@ -14,6 +15,12 @@ export class RegisterAuth_Dto {
     @IsString()
     @IsEmail()
     email: string;
+
+    @IsEnum(User_Role_Enum, {
+        message: `Role must be one of the following values: ${{ ...User_Role_Enum }}`
+    })
+    @IsOptional()
+    role: string;
 
     @IsString()
     @IsStrongPassword()
