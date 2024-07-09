@@ -64,6 +64,11 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], Socials_Dto.prototype, "tiktok", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], Socials_Dto.prototype, "linkedin", void 0);
 class Update_Profile_Dto extends (0, mapped_types_1.PartialType)(create_profile_dto_1.Create_Profile_Dto) {
 }
 exports.Update_Profile_Dto = Update_Profile_Dto;

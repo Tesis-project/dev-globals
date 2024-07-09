@@ -29,18 +29,27 @@ export class Socials_Dto {
     @IsOptional()
     @IsString()
     facebook: string;
+
     @IsOptional()
     @IsString()
     twitter: string;
+
     @IsOptional()
     @IsString()
     instagram: string;
+
     @IsOptional()
     @IsString()
     youtube: string;
+
     @IsOptional()
     @IsString()
     tiktok: string;
+
+    @IsOptional()
+    @IsString()
+    linkedin: string;
+
 
 }
 

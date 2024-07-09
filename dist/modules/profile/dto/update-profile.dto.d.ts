@@ -14,6 +14,7 @@ export declare class Socials_Dto {
     instagram: string;
     youtube: string;
     tiktok: string;
+    linkedin: string;
 }
 declare const Update_Profile_Dto_base: import("@nestjs/mapped-types").MappedType<Partial<Create_Profile_Dto>>;
 export declare class Update_Profile_Dto extends Update_Profile_Dto_base {
