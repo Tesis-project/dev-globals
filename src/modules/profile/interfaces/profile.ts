@@ -23,6 +23,8 @@ import { User_I } from "../../user/interfaces";
         instagram?: string;
         youtube?: string;
         tiktok?: string;
+        linkedin?: string;
+
     };
     user?: User_I | string;
 
