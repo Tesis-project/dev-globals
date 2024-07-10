@@ -1,11 +1,12 @@
 {
     "name": "@tesis-project/dev-globals",
-    "version": "1.0.728",
+    "version": "1.0.729",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc",
+        "dev": "tsc -w",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
@@ -29,7 +30,7 @@
         "url": "git+https://github.com/Tesis-project/dev-globals.git"
     },
     "peerDependencies": {
-        "@formkit/tempo": "^0.1.1",
+        "@formkit/tempo": "^0.1.2",
         "@mikro-orm/core": "^6.2.9",
         "@nestjs/mapped-types": "^2.0.5",
         "class-transformer": "^0.5.1",

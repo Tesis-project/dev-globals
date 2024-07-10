@@ -10,6 +10,22 @@ class TempoHandler {
             tz: "America/Caracas",
         });
     }
+    date_short(date) {
+        const l = (0, tempo_1.format)({
+            date: date,
+            format: "D MMM YYYY",
+            tz: "America/Caracas",
+        });
+        return l;
+    }
+    date_complete(date) {
+        const l = (0, tempo_1.format)({
+            date: date,
+            format: "D MMM YYYY - h:mm a",
+            tz: "America/Caracas",
+        });
+        return l;
+    }
 }
 exports.TempoHandler = TempoHandler;
 //# sourceMappingURL=TempoHandler.js.map
