@@ -39,4 +39,8 @@ __decorate([
     (0, class_validator_1.IsDate)(),
     __metadata("design:type", Date)
 ], User_I_Dto.prototype, "created_at", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], User_I_Dto.prototype, "token", void 0);
 //# sourceMappingURL=user-validate.dto.js.map

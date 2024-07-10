@@ -1,5 +1,5 @@
 
-import { IsDate, IsEmail, IsEnum, IsUUID } from "class-validator";
+import { IsDate, IsEmail, IsEnum, IsOptional, IsUUID } from "class-validator";
 import { AuthStatus_Enum } from "../../auth/interfaces";
 import { Type } from "class-transformer";
 
@@ -22,5 +22,8 @@ export class User_I_Dto {
     @Type(() => Date)
     @IsDate()
     created_at: Date;
+
+    @IsOptional()
+    token?: string;
 
 }

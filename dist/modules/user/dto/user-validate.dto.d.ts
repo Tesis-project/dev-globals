@@ -4,4 +4,5 @@ export declare class User_I_Dto {
     status: string;
     user: string;
     created_at: Date;
+    token?: string;
 }
