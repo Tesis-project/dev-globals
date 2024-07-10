@@ -1,4 +1,4 @@
-import { IsOptional, IsPhoneNumber, IsString } from "class-validator";
+import { IsOptional, IsPhoneNumber, IsString, ValidateIf } from "class-validator";
 
 
 export class Update_Personal_Data_Dto {
@@ -12,6 +12,7 @@ export class Update_Personal_Data_Dto {
     city: string;
 
     @IsOptional()
+    @ValidateIf(o => o.phone !== '' && o.phone !== null && o.phone !== undefined)
     @IsPhoneNumber()
     phone: string;
 
