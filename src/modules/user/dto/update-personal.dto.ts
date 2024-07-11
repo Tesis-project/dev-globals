@@ -11,8 +11,8 @@ export class Update_Personal_Data_Dto {
     @IsString()
     city: string;
 
-    @IsOptional()
     @ValidateIf(o => o.phone !== '' && o.phone !== null && o.phone !== undefined)
+    @IsOptional()
     @IsPhoneNumber()
     phone: string;
 

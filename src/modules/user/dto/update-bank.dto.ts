@@ -1,4 +1,4 @@
-import { IsEnum, IsOptional, IsPhoneNumber, IsString, IsUUID, MinLength, ValidateNested } from "class-validator";
+import { IsEnum, IsOptional, IsPhoneNumber, IsString, IsUUID, MinLength, ValidateIf, ValidateNested } from "class-validator";
 import { Banks_Enum, Payment_Type_Enum } from "../interfaces";
 import { Type } from "class-transformer";
 
@@ -19,6 +19,7 @@ export class Bank_Data_Dto {
     })
     bank_name: string;
 
+    @ValidateIf(o => o.number !== '' && o.number !== null && o.number !== undefined)
     @IsString()
     @MinLength(5)
     number: string;
@@ -30,8 +31,9 @@ export class Bank_Data_Dto {
     @MinLength(5)
     person_id: string;
 
+    @ValidateIf(o => o.phone !== '' && o.phone !== null && o.phone !== undefined)
+    @IsOptional()
     @IsPhoneNumber()
-    @MinLength(6)
     phone: string;
 
 }

@@ -27,8 +27,8 @@ export interface Auth_I extends SchemaKey_I {
     password: string;
     username: string;
 
-    created_at: Date;
-    updated_at: Date;
+    created_at?: Date;
+    updated_at?: Date;
     last_session: Date;
 
     status?: AuthStatus_Enum;

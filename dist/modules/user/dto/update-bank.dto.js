@@ -34,6 +34,7 @@ __decorate([
     __metadata("design:type", String)
 ], Bank_Data_Dto.prototype, "bank_name", void 0);
 __decorate([
+    (0, class_validator_1.ValidateIf)(o => o.number !== '' && o.number !== null && o.number !== undefined),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.MinLength)(5),
     __metadata("design:type", String)
@@ -48,8 +49,9 @@ __decorate([
     __metadata("design:type", String)
 ], Bank_Data_Dto.prototype, "person_id", void 0);
 __decorate([
+    (0, class_validator_1.ValidateIf)(o => o.phone !== '' && o.phone !== null && o.phone !== undefined),
+    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsPhoneNumber)(),
-    (0, class_validator_1.MinLength)(6),
     __metadata("design:type", String)
 ], Bank_Data_Dto.prototype, "phone", void 0);
 class Update_Bank_Data_Dto {

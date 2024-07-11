@@ -34,6 +34,6 @@ export interface Payment_Account_I extends SchemaKey_I {
     titular: string;
     person_id: string;
     phone: string;
-    created_at: Date;
-    updated_at: Date;
+    created_at?: Date;
+    updated_at?: Date;
 }
