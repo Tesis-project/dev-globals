@@ -1,26 +1,26 @@
 
 import { Type } from "class-transformer";
 import { IsOptional, IsString, MinLength, ValidateNested, IsUUID } from "class-validator";
-import { File_Model_I } from "../../../core/interfaces";
 import { PartialType } from '@nestjs/mapped-types';
 import { Create_Profile_Dto } from "./create-profile.dto";
+import { Media_I } from "../../media/interfaces";
 
 
 export class Credentials_Dto {
 
     @IsOptional()
-    identity_file: File_Model_I;
+    identity_file: Media_I;
     @IsOptional()
-    profesional_file: File_Model_I;
+    profesional_file: Media_I;
 
 }
 
 export class Media_Dto {
 
     @IsOptional()
-    image_gallery: File_Model_I[];
+    image_gallery: Media_I[];
     @IsOptional()
-    video_gallery: File_Model_I[];
+    video_gallery: Media_I[];
 
 }
 
@@ -68,10 +68,10 @@ export class Update_Profile_Dto extends PartialType(Create_Profile_Dto) {
     bio_short?: string;
 
     @IsOptional()
-    profile_pic?: File_Model_I;
+    profile_pic?: Media_I;
 
     @IsOptional()
-    cover_pic?: File_Model_I;
+    cover_pic?: Media_I;
 
     @IsOptional()
     @ValidateNested()
