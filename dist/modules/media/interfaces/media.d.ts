@@ -12,11 +12,19 @@ export declare enum Media_Format_Enum {
     DOC = "DOC",
     DOCX = "DOCX"
 }
+export declare enum Media_Reference_Enum {
+    PROFILE_PROFILE_PIC = "PROFILE_PROFILE_PIC",
+    PROFILE_COVER_PIC = "PROFILE_COVER_PIC",
+    PROFILE_CREDENTIALS = "PROFILE_CREDENTIALS",
+    PROFILE_MEDIA = "PROFILE_MEDIA"
+}
 export interface Media_I extends SchemaKey_I {
     name: string;
     type: Media_Type_Enum;
     file: string;
     folder: string;
     format: Media_Format_Enum;
+    reference: Media_Reference_Enum;
+    reference_id: string;
     src: string;
 }
