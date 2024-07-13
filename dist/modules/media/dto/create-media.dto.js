@@ -22,11 +22,7 @@ __decorate([
     __metadata("design:type", String)
 ], Create_Media_Dto.prototype, "reference", void 0);
 __decorate([
-    (0, class_validator_1.IsUUID)(4, { message: 'Invalid UUID' }),
+    (0, class_validator_1.IsUUID)(4, { message: 'reference_id is Invalid UUID' }),
     __metadata("design:type", String)
 ], Create_Media_Dto.prototype, "reference_id", void 0);
-__decorate([
-    (0, class_validator_1.IsUUID)(4, { message: 'Invalid UUID' }),
-    __metadata("design:type", String)
-], Create_Media_Dto.prototype, "user", void 0);
 //# sourceMappingURL=create-media.dto.js.map
