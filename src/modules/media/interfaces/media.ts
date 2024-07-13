@@ -41,6 +41,7 @@ export interface Media_I extends SchemaKey_I {
     reference_id: string;
     src: string;
     user: User_I | string;
+    cloudFile_id?: string;
     updated_at?: Date;
 
 }
