@@ -1,9 +1,9 @@
 
 import { IsDate, IsEmail, IsEnum, IsOptional, IsUUID } from "class-validator";
-import { AuthStatus_Enum } from "../../auth/interfaces";
+import { AuthStatus_Enum } from "../interfaces";
 import { Type } from "class-transformer";
 
-export class User_I_Dto {
+export class Auth_User_I_Dto {
 
     @IsUUID(4, { message: 'Invalid UUID' })
     _id: string;

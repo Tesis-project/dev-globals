@@ -1,4 +1,4 @@
-export declare class User_I_Dto {
+export declare class Auth_User_I_Dto {
     _id: string;
     email: string;
     status: string;
