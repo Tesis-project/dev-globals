@@ -22,6 +22,12 @@ __decorate([
     __metadata("design:type", String)
 ], Create_Media_Dto.prototype, "reference", void 0);
 __decorate([
+    (0, class_validator_1.IsEnum)(interfaces_1.Media_Type_Enum, {
+        message: `type must be one of the following values: ${{ ...interfaces_1.Media_Type_Enum }}`
+    }),
+    __metadata("design:type", String)
+], Create_Media_Dto.prototype, "type", void 0);
+__decorate([
     (0, class_validator_1.IsUUID)(4, { message: 'reference_id is Invalid UUID' }),
     __metadata("design:type", String)
 ], Create_Media_Dto.prototype, "reference_id", void 0);
