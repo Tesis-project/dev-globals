@@ -41,6 +41,6 @@ export interface Media_I extends SchemaKey_I {
     reference_id: string;
     src: string;
     user: User_I | string;
-    created_at?: Date;
+    updated_at?: Date;
 
 }

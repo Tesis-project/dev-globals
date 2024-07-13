@@ -18,7 +18,4 @@ export class Create_Media_Dto {
     @IsUUID(4, { message: 'reference_id is Invalid UUID' })
     reference_id: string;
 
-    // @IsUUID(4, { message: 'user is Invalid UUID' })
-    // user: string;
-
 }
