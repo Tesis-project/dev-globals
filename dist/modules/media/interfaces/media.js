@@ -10,6 +10,7 @@ var Media_Type_Enum;
 var Media_Format_Enum;
 (function (Media_Format_Enum) {
     Media_Format_Enum["JPG"] = "JPG";
+    Media_Format_Enum["JPEG"] = "JPEG";
     Media_Format_Enum["PNG"] = "PNG";
     Media_Format_Enum["MP4"] = "MP4";
     Media_Format_Enum["PDF"] = "PDF";
@@ -20,7 +21,9 @@ var Media_Reference_Enum;
 (function (Media_Reference_Enum) {
     Media_Reference_Enum["PROFILE_PROFILE_PIC"] = "PROFILE_PROFILE_PIC";
     Media_Reference_Enum["PROFILE_COVER_PIC"] = "PROFILE_COVER_PIC";
-    Media_Reference_Enum["PROFILE_CREDENTIALS"] = "PROFILE_CREDENTIALS";
-    Media_Reference_Enum["PROFILE_MEDIA"] = "PROFILE_MEDIA";
+    Media_Reference_Enum["PROFILE_CREDENTIAL_IDENTITY"] = "PROFILE_CREDENTIALS_IDENTITY";
+    Media_Reference_Enum["PROFILE_CREDENTIAL_PROFESSIONAL"] = "PROFILE_CREDENTIALS_PROFESSIONAL";
+    Media_Reference_Enum["PROFILE_MEDIA_VIDEO_GALLERY"] = "PROFILE_MEDIA_VIDEO_GALLERY";
+    Media_Reference_Enum["PROFILE_MEDIA_IMAGE_GALLERY"] = "PROFILE_MEDIA_IMAGE_GALLERY";
 })(Media_Reference_Enum || (exports.Media_Reference_Enum = Media_Reference_Enum = {}));
 //# sourceMappingURL=media.js.map

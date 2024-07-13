@@ -2,8 +2,8 @@ import { User_I } from ".";
 import { SchemaKey_I } from "../../../core/interfaces";
 export interface User_HiringData_I extends SchemaKey_I {
     personal: User_Personal_Data_I;
-    payment_accounts?: Payment_Account_I[];
-    user?: User_I | string;
+    payment_accounts: Payment_Account_I[];
+    user: User_I | string;
 }
 export interface User_Personal_Data_I extends SchemaKey_I {
     address?: string;

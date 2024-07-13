@@ -17,8 +17,8 @@ export interface User_I extends SchemaKey_I {
         city?: string;
         state?: string;
     };
-    auth?: Auth_I | string;
-    profile?: Profile_I | string;
-    hiring_data?: User_HiringData_I | string;
+    auth: Auth_I | string;
+    profile: Profile_I | string;
+    hiring_data: User_HiringData_I | string;
     updated_at?: Date;
 }

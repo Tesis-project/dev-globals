@@ -27,7 +27,7 @@ import { User_I } from "../../user/interfaces";
         linkedin?: string;
 
     };
-    user?: User_I | string;
+    user: User_I | string;
 
     updated_at?: Date;
 
