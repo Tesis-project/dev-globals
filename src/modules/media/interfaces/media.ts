@@ -9,6 +9,22 @@ export enum Media_Type_Enum {
     DOCUMENT = "DOCUMENT",
 }
 
+export enum Media_Image_Format_Enum {
+    JPG = "JPG",
+    JPEG = "JPEG",
+    PNG = "PNG"
+}
+
+export enum Media_Video_Format_Enum {
+    MP4 = "MP4"
+}
+
+export enum Media_Document_Format_Enum {
+    PDF = "PDF",
+    DOC = "DOC",
+    DOCX = "DOCX"
+}
+
 export enum Media_Format_Enum {
     JPG = "JPG",
     JPEG = "JPEG",
@@ -17,7 +33,6 @@ export enum Media_Format_Enum {
     PDF = "PDF",
     DOC = "DOC",
     DOCX = "DOCX",
-
 }
 
 export enum Media_Reference_Enum {
@@ -45,3 +60,13 @@ export interface Media_I extends SchemaKey_I {
     updated_at?: Date;
 
 }
+
+
+/*
+const Media_Format_Enum = {
+    ...Media_Image_Format_Enum,
+    ...Media_Video_Format_Enum,
+    ...Media_Document_Format_Enum
+} as const;
+
+type Media_Format_Enum = typeof Media_Format_Enum[keyof typeof Media_Format_Enum]; */

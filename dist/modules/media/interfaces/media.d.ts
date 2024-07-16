@@ -5,6 +5,19 @@ export declare enum Media_Type_Enum {
     VIDEO = "VIDEO",
     DOCUMENT = "DOCUMENT"
 }
+export declare enum Media_Image_Format_Enum {
+    JPG = "JPG",
+    JPEG = "JPEG",
+    PNG = "PNG"
+}
+export declare enum Media_Video_Format_Enum {
+    MP4 = "MP4"
+}
+export declare enum Media_Document_Format_Enum {
+    PDF = "PDF",
+    DOC = "DOC",
+    DOCX = "DOCX"
+}
 export declare enum Media_Format_Enum {
     JPG = "JPG",
     JPEG = "JPEG",
