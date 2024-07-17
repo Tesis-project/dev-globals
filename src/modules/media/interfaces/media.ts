@@ -48,14 +48,14 @@ export enum Media_Reference_Enum {
 
 export interface Media_I extends SchemaKey_I {
 
-    file: string;
-    folder: string;
-    format: Media_Format_Enum;
-    type: Media_Type_Enum;
-    reference: Media_Reference_Enum;
-    reference_id: string;
-    src: string;
-    user: User_I | string;
+    file?: string;
+    folder?: string;
+    format?: Media_Format_Enum;
+    type?: Media_Type_Enum;
+    reference?: Media_Reference_Enum;
+    reference_id?: string;
+    src?: string;
+    user?: User_I | string;
     cloud_file_id?: string;
     updated_at?: Date;
 
