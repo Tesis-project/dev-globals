@@ -2,7 +2,7 @@ import { PartialType } from '@nestjs/mapped-types';
 import { CreateUser_Dto } from './create-user.dto';
 import { Gender_Enum } from '../interfaces';
 
-import { IsEnum, IsOptional, IsPhoneNumber, IsString, IsUUID, MinLength, ValidateNested } from 'class-validator';
+import { IsEnum, IsOptional, IsPhoneNumber, IsString, IsUUID, MinLength, ValidateIf, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 
 
@@ -31,9 +31,9 @@ export class UpdateUser_Dto extends PartialType(CreateUser_Dto) {
     @IsOptional()
     gender?: string;
 
-    @IsPhoneNumber()
+    @ValidateIf(o => o.phone !== '' && o.phone !== null && o.phone !== undefined)
     @IsOptional()
-    @MinLength(6)
+    @IsPhoneNumber()
     phone?: string;
 
     @IsOptional()

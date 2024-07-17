@@ -1,6 +1,6 @@
 {
     "name": "@tesis-project/dev-globals",
-    "version": "1.0.743",
+    "version": "1.0.744",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

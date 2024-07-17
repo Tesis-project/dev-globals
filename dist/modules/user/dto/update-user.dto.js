@@ -48,9 +48,9 @@ __decorate([
     __metadata("design:type", String)
 ], UpdateUser_Dto.prototype, "gender", void 0);
 __decorate([
-    (0, class_validator_1.IsPhoneNumber)(),
+    (0, class_validator_1.ValidateIf)(o => o.phone !== '' && o.phone !== null && o.phone !== undefined),
     (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.MinLength)(6),
+    (0, class_validator_1.IsPhoneNumber)(),
     __metadata("design:type", String)
 ], UpdateUser_Dto.prototype, "phone", void 0);
 __decorate([
