@@ -8,9 +8,9 @@ export class Create_Request_Key_Dto {
     })
     type: RequestType_Enum;
 
-    @IsOptional()
-    @IsUUID(4, { message: 'Auth is Invalid UUID' })
-    auth: string;
+    // @IsOptional()
+    // @IsUUID(4, { message: 'Auth is Invalid UUID' })
+    // auth: string;
 
     @IsOptional()
     @IsString()

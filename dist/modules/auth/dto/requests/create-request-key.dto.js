@@ -23,11 +23,6 @@ __decorate([
 ], Create_Request_Key_Dto.prototype, "type", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsUUID)(4, { message: 'Auth is Invalid UUID' }),
-    __metadata("design:type", String)
-], Create_Request_Key_Dto.prototype, "auth", void 0);
-__decorate([
-    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], Create_Request_Key_Dto.prototype, "detail", void 0);
