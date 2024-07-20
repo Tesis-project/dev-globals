@@ -19,4 +19,5 @@ __exportStar(require("./register-user.dto"), exports);
 __exportStar(require("./auth-user-validate.dto"), exports);
 __exportStar(require("./requests/create-password-request.dto"), exports);
 __exportStar(require("./requests/create-request-key.dto"), exports);
+__exportStar(require("./requests/accept-password-request.dto"), exports);
 //# sourceMappingURL=index.js.map
