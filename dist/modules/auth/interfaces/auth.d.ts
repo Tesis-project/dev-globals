@@ -1,5 +1,6 @@
 import { SchemaKey_I } from "../../../core/interfaces";
 import { User_I } from "../../user/interfaces";
+import { Requests_I } from "./requests";
 export declare enum AuthStatus_Enum {
     NONE = "NONE",
     VERIFIED = "VERIFIED",
@@ -26,6 +27,7 @@ export interface Auth_I extends SchemaKey_I {
     status?: AuthStatus_Enum;
     role: User_Role_Enum;
     user: User_I | string;
+    requests?: Requests_I[];
 }
 export interface Session_Auth_I extends SchemaKey_I {
     email: string;
