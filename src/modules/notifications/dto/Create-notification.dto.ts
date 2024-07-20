@@ -1,6 +1,5 @@
-import { IsString, IsUUID, MinLength } from "class-validator";
-import { User_I } from "../../user/interfaces";
 
+import { IsString, IsUUID, MinLength } from "class-validator";
 
 export class Create_Notification_Dto {
 
@@ -13,6 +12,6 @@ export class Create_Notification_Dto {
     message: string;
 
     @IsUUID(4, { message: 'user is a Invalid UUID' })
-    user: User_I | string;
+    user: string;
 
 }
