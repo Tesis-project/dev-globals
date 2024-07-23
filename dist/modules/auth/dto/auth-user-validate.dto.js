@@ -31,6 +31,12 @@ __decorate([
     __metadata("design:type", String)
 ], Auth_User_I_Dto.prototype, "status", void 0);
 __decorate([
+    (0, class_validator_1.IsEnum)(interfaces_1.User_Role_Enum, {
+        message: `role must be one of the following values: ${{ ...interfaces_1.User_Role_Enum }}`
+    }),
+    __metadata("design:type", String)
+], Auth_User_I_Dto.prototype, "role", void 0);
+__decorate([
     (0, class_validator_1.IsUUID)(4, { message: 'Invalid UUID' }),
     __metadata("design:type", String)
 ], Auth_User_I_Dto.prototype, "user", void 0);

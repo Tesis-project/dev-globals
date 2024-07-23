@@ -28,4 +28,4 @@ __decorate([
     (0, class_validator_1.IsUUID)(4, { message: 'user is a Invalid UUID' }),
     __metadata("design:type", String)
 ], Create_Notification_Dto.prototype, "user", void 0);
-//# sourceMappingURL=Create-notification.dto.js.map
+//# sourceMappingURL=create-notification.dto.js.map

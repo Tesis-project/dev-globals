@@ -1,6 +1,6 @@
 
 import { IsDate, IsEmail, IsEnum, IsOptional, IsUUID } from "class-validator";
-import { AuthStatus_Enum } from "../interfaces";
+import { AuthStatus_Enum, User_Role_Enum } from "../interfaces";
 import { Type } from "class-transformer";
 
 export class Auth_User_I_Dto {
@@ -15,6 +15,11 @@ export class Auth_User_I_Dto {
         message: `status must be one of the following values: ${{ ...AuthStatus_Enum }}`
     })
     status: string;
+
+    @IsEnum(User_Role_Enum, {
+        message: `role must be one of the following values: ${{ ...User_Role_Enum }}`
+    })
+    role: string;
 
     @IsUUID(4, { message: 'Invalid UUID' })
     user: string;
