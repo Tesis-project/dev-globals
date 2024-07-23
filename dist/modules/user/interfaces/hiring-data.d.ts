@@ -12,6 +12,7 @@ export interface User_Personal_Data_I extends SchemaKey_I {
     postal_code?: string;
     rif?: string;
     social_reason?: string;
+    specific_conditions?: string;
     state?: string;
     updated_at?: Date;
 }

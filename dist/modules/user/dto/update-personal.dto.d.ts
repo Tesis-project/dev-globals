@@ -5,5 +5,6 @@ export declare class Update_Personal_Data_Dto {
     postal_code: string;
     rif: string;
     social_reason: string;
+    specific_conditions: string;
     state: string;
 }

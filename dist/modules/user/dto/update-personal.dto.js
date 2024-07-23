@@ -49,5 +49,10 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
+], Update_Personal_Data_Dto.prototype, "specific_conditions", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
 ], Update_Personal_Data_Dto.prototype, "state", void 0);
 //# sourceMappingURL=update-personal.dto.js.map

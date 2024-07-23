@@ -30,6 +30,10 @@ export class Update_Personal_Data_Dto {
 
     @IsOptional()
     @IsString()
+    specific_conditions: string;
+
+    @IsOptional()
+    @IsString()
     state: string;
 
 }
