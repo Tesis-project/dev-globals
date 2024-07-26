@@ -2,6 +2,7 @@
 import { SchemaKey_I } from "../../../core/interfaces";
 import { Media_I } from "../../media/interfaces";
 import { User_I } from "../../user/interfaces";
+import { MetaRole_I } from "./metaRole";
 
 
  export interface Profile_I extends SchemaKey_I {
@@ -27,7 +28,9 @@ import { User_I } from "../../user/interfaces";
         linkedin?: string;
 
     };
+
     user: User_I | string;
+    meta: MetaRole_I | string;
 
     updated_at?: Date;
 
