@@ -18,13 +18,11 @@ class Singer_Dto {
 exports.Singer_Dto = Singer_Dto;
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.voiceSpecialty_default, { each: true }),
     __metadata("design:type", Array)
 ], Singer_Dto.prototype, "voice_specialty", void 0);
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.voiceType_default, { each: true }),
     __metadata("design:type", Array)
 ], Singer_Dto.prototype, "voice_type", void 0);
@@ -32,19 +30,16 @@ class Instrumentist_Dto {
 }
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.Instrumentist_specialty_default, { each: true }),
     __metadata("design:type", Array)
 ], Instrumentist_Dto.prototype, "specialty", void 0);
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.Instrumentist_position_default, { each: true }),
     __metadata("design:type", Array)
 ], Instrumentist_Dto.prototype, "position", void 0);
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.Instrumentist_categories_default, { each: true }),
     __metadata("design:type", Array)
 ], Instrumentist_Dto.prototype, "categories", void 0);
@@ -52,13 +47,11 @@ class Orquests_director_Dto {
 }
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.DO_repertoire_default, { each: true }),
     __metadata("design:type", Array)
 ], Orquests_director_Dto.prototype, "repertoire", void 0);
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.DO_specialty_default, { each: true }),
     __metadata("design:type", Array)
 ], Orquests_director_Dto.prototype, "specialty", void 0);
@@ -66,13 +59,11 @@ class Scenes_director_Dto {
 }
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.SD_repertoire_default, { each: true }),
     __metadata("design:type", Array)
 ], Scenes_director_Dto.prototype, "repertoire", void 0);
 __decorate([
     (0, class_validator_1.IsArray)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
     (0, class_validator_1.IsIn)(artists_skills_1.SD_specialty_default, { each: true }),
     __metadata("design:type", Array)
 ], Scenes_director_Dto.prototype, "specialty", void 0);

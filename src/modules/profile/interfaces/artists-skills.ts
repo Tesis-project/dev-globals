@@ -198,3 +198,42 @@ export interface Meta_Artist_I extends SchemaKey_I {
     updated_at?: Date;
 
 }
+
+let sk: Meta_Artist_I['skills'] = {
+
+    singer: {
+        voice_specialty: [
+            "singer_specialty_opera",
+            "singer_specialty_zarzuela",
+            "singer_specialty_oratory",
+            "singer_specialty_sinfonyc_repertoire",
+            "singer_specialty_lyric_recitals",
+            "singer_specialty_lyric_galas",
+        ],
+        voice_type: [
+            "singer_voice_type_coloratura_soprano",
+            "singer_voice_type_lyric_soprano",
+            "singer_voice_type_light_soprano",
+            "singer_voice_type_light_lyric_soprano",
+            "singer_voice_type_lyric_spinto_soprano",
+            "singer_voice_type_dramatic_soprano",
+            "singer_voice_type_soubrette_soprano",
+            "singer_voice_type_dramatic_coloratura_soprano",
+        ]
+    }
+
+}
+
+    // instrumentist: {
+    //     specialty: [],
+    //     position: [],
+    //     categories: []
+    // },
+    // orquests_director: {
+    //     repertoire: [],
+    //     specialty: []
+    // },
+    // scenes_director: {
+    //     repertoire: [],
+    //     specialty: []
+    // }

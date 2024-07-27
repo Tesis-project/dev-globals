@@ -25,12 +25,10 @@ import {
 export class Singer_Dto {
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(voiceSpecialty_default, { each: true })
     voice_specialty: Singer_voiceSpecialty_Type[];
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(voiceType_default, { each: true })
     voice_type: Singer_voiceType_Type[];
 
@@ -39,17 +37,14 @@ export class Singer_Dto {
 class Instrumentist_Dto {
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(Instrumentist_specialty_default, { each: true })
     specialty: Instrumentist_Specialty_Type[];
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(Instrumentist_position_default, { each: true })
     position: Instrumentist_Position_Type[];
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(Instrumentist_categories_default, { each: true })
     categories: Instrumentist_Categories_Type[];
 
@@ -58,12 +53,10 @@ class Instrumentist_Dto {
 class Orquests_director_Dto {
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(DO_repertoire_default, { each: true })
     repertoire: DO_Repertoire_Type[];
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(DO_specialty_default, { each: true })
     specialty: DO_Specialty_Type[];
 
@@ -72,12 +65,10 @@ class Orquests_director_Dto {
 class Scenes_director_Dto {
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(SD_repertoire_default, { each: true })
     repertoire: SD_Repertoire_Type[];
 
     @IsArray()
-    @ValidateNested({ each: true })
     @IsIn(SD_specialty_default, { each: true })
     specialty: SD_specialty_Type[];
 

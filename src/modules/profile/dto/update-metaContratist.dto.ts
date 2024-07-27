@@ -1,16 +1,18 @@
 import { Type } from "class-transformer";
-import { IsOptional, IsPhoneNumber, IsString, ValidateNested } from "class-validator";
+import { IsPhoneNumber, IsString, ValidateNested } from "class-validator";
 
 
 class Direction_Dto {
-    @IsString()
-    address?: string;
 
     @IsString()
-    city?: string;
+    address: string;
 
     @IsString()
-    state?: string;
+    city: string;
+
+    @IsString()
+    state: string;
+
 }
 
 class InstituesCompanies_Dto {
@@ -29,7 +31,7 @@ class InstituesCompanies_Dto {
 
     @ValidateNested()
     @Type(() => Direction_Dto)
-    direction?: Direction_Dto;
+    direction: Direction_Dto;
 
 }
 
