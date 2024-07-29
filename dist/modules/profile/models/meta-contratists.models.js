@@ -4,7 +4,7 @@ exports.MetaContratists_Models = void 0;
 class MetaContratists_Models {
     constructor() {
     }
-    set_ArtistMeta_Blank() {
+    set_contratistsMeta_Blank() {
         const c = {
             name: "",
             rif_nif: "",

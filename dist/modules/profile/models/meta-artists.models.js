@@ -4,7 +4,7 @@ exports.MetaArtist_Models = void 0;
 class MetaArtist_Models {
     constructor() {
     }
-    set_ArtistMeta_Blank() {
+    set_artistMeta_Blank() {
         const _sk = {
             singer: {
                 voice_specialty: [],

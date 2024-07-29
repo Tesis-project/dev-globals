@@ -1,4 +1,5 @@
+import { InstitutesCompanies_I } from "../interfaces";
 export declare class MetaContratists_Models {
     constructor();
-    set_ArtistMeta_Blank(): import("../interfaces").InstitutesCompanies_I;
+    set_contratistsMeta_Blank(): InstitutesCompanies_I;
 }

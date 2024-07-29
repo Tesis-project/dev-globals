@@ -2,7 +2,6 @@ import { SchemaKey_I } from "../../../core/interfaces";
 import { MetaRole_I } from "./metaRole";
 
 
-
 export const voiceSpecialty_default = [
     "singer_specialty_opera",
     "singer_specialty_zarzuela",
@@ -50,7 +49,6 @@ export interface SingerSkills_I {
     voice_specialty: Singer_voiceSpecialty_Type[];
     voice_type: Singer_voiceType_Type[];
 }
-
 
 export const SD_repertoire_default = [
     "SD_repertoire_german",
@@ -106,7 +104,6 @@ export interface Orchest_Director_Skills_I {
     specialty: DO_Specialty_Type[];
 }
 
-
 export const Instrumentist_specialty_default = [
     "specialty_symphonicOrchestra",
     "specialty_chamberMusic"
@@ -119,7 +116,78 @@ export const Instrumentist_position_default = [
 ] as const;
 export type Instrumentist_Position_Type = typeof Instrumentist_position_default[number];
 
-export const Instrumentist_categories_default = [
+const Inst_WindCategory_default = [
+    "instrument_wind_metal_frenchHorn",
+    "instrument_wind_metal_euphonium",
+    "instrument_wind_metal_clarinet",
+    "instrument_wind_metal_trombone",
+    "instrument_wind_metal_bassTrombone",
+    "instrument_wind_metal_trumpet",
+    "instrument_wind_metal_tuba",
+    "instrument_wind_metal_others",
+    "instrument_wind_wood_accordion",
+    "instrument_wind_wood_harmonium",
+    "instrument_wind_wood_harmonica",
+    "instrument_wind_wood_bansuri",
+    "instrument_wind_wood_bandoneon",
+    "instrument_wind_wood_clarinet",
+    "instrument_wind_wood_claron",
+    "instrument_wind_wood_englishHorn",
+    "instrument_wind_wood_contrafagot",
+    "instrument_wind_wood_fagot",
+    "instrument_wind_wood_pan_flute",
+    "instrument_wind_wood_sweet_flute",
+    "instrument_wind_wood_ireland_flute",
+    "instrument_wind_wood_transverse_flute",
+    "instrument_wind_wood_",
+    "instrument_wind_wood_bagpipe",
+    "instrument_wind_wood_melodic",
+    "instrument_wind_wood_oboe",
+    "instrument_wind_wood_ocarina",
+    "instrument_wind_wood_quena",
+    "instrument_wind_wood_sax",
+    "instrument_wind_wood_others",
+] as const;
+export type Inst_WindCategory_Type = typeof Inst_WindCategory_default[number];
+
+const Inst_percusionCategory_default = [
+ "instrument_percussion_arab",
+"instrument_percussion_brazilian",
+"instrument_percussion_cuban",
+"instrument_percussion_folk",
+"instrument_percussion_hindu",
+"instrument_percussion_latin",
+"instrument_percussion_oriental",
+"instrument_percussion_symphonic",
+"instrument_percussion_piano",
+"instrument_percussion_marimba",
+"instrument_percussion_vibraphone",
+"instrument_percussion_xylophone",
+"instrument_percussion_timpani",
+] as const;
+export type Inst_percusionCategory_Type = typeof Inst_percusionCategory_default[number];
+
+const Inst_electricalCategory_default = [
+"instrument_electrical_bass",
+"instrument_electrical_guitar",
+"instrument_electrical_piano",
+"instrument_electrical_synthesizer",
+"instrument_electrical_violin",
+] as const;
+export type Inst_electricalCategory_Type = typeof Inst_electricalCategory_default[number];
+
+const Inst_stringCategory_default = [
+"instrument_string_harp",
+"instrument_string_classicGuitar",
+"instrument_string_bass",
+"instrument_string_viola",
+"instrument_string_violin",
+"instrument_string_cello",
+"instrument_string_others",
+] as const;
+export type Inst_stringCategory_Type = typeof Inst_stringCategory_default[number];
+
+/* export const Instrumentist_categories_default = [
     "instrument_wind_metal_frenchHorn",
     "instrument_wind_metal_euphonium",
     "instrument_wind_metal_clarinet",
@@ -175,15 +243,21 @@ export const Instrumentist_categories_default = [
     "instrument_string_violin",
     "instrument_string_cello",
     "instrument_string_others",
+] as const; */
+// export type Instrumentist_Categories_Type = typeof Instrumentist_categories_default[number];
+
+export const Instrumentist_categories_default = [
+    ...Inst_WindCategory_default,
+    ...Inst_percusionCategory_default,
+    ...Inst_electricalCategory_default,
+    ...Inst_stringCategory_default
 ] as const;
 export type Instrumentist_Categories_Type = typeof Instrumentist_categories_default[number];
 
 export interface Instrumentist_Model_I {
-
     specialty: Instrumentist_Specialty_Type[];
     position: Instrumentist_Position_Type[];
     categories: Instrumentist_Categories_Type[];
-
 }
 
 export interface Meta_Artist_I extends SchemaKey_I {
@@ -198,42 +272,3 @@ export interface Meta_Artist_I extends SchemaKey_I {
     updated_at?: Date;
 
 }
-
-let sk: Meta_Artist_I['skills'] = {
-
-    singer: {
-        voice_specialty: [
-            "singer_specialty_opera",
-            "singer_specialty_zarzuela",
-            "singer_specialty_oratory",
-            "singer_specialty_sinfonyc_repertoire",
-            "singer_specialty_lyric_recitals",
-            "singer_specialty_lyric_galas",
-        ],
-        voice_type: [
-            "singer_voice_type_coloratura_soprano",
-            "singer_voice_type_lyric_soprano",
-            "singer_voice_type_light_soprano",
-            "singer_voice_type_light_lyric_soprano",
-            "singer_voice_type_lyric_spinto_soprano",
-            "singer_voice_type_dramatic_soprano",
-            "singer_voice_type_soubrette_soprano",
-            "singer_voice_type_dramatic_coloratura_soprano",
-        ]
-    }
-
-}
-
-    // instrumentist: {
-    //     specialty: [],
-    //     position: [],
-    //     categories: []
-    // },
-    // orquests_director: {
-    //     repertoire: [],
-    //     specialty: []
-    // },
-    // scenes_director: {
-    //     repertoire: [],
-    //     specialty: []
-    // }

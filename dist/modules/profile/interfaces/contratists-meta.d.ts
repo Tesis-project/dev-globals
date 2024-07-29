@@ -3,7 +3,7 @@ import { MetaRole_I } from "./metaRole";
 export interface InstitutesCompanies_I {
     name: string;
     rif_nif: string;
-    direction: {
+    direction?: {
         address: string;
         city: string;
         state: string;
