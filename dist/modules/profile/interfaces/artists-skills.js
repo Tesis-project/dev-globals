@@ -84,7 +84,7 @@ exports.Instrumentist_position_default = [
     "position_orchestraMember",
     "position_solist",
 ];
-const Inst_WindCategory_default = [
+const Inst_windMetalCategory_default = [
     "instrument_wind_metal_frenchHorn",
     "instrument_wind_metal_euphonium",
     "instrument_wind_metal_clarinet",
@@ -93,6 +93,8 @@ const Inst_WindCategory_default = [
     "instrument_wind_metal_trumpet",
     "instrument_wind_metal_tuba",
     "instrument_wind_metal_others",
+];
+const Inst_windWoodCategory_default = [
     "instrument_wind_wood_accordion",
     "instrument_wind_wood_harmonium",
     "instrument_wind_wood_harmonica",
@@ -206,7 +208,8 @@ const Inst_stringCategory_default = [
 ] as const; */
 // export type Instrumentist_Categories_Type = typeof Instrumentist_categories_default[number];
 exports.Instrumentist_categories_default = [
-    ...Inst_WindCategory_default,
+    ...Inst_windMetalCategory_default,
+    ...Inst_windWoodCategory_default,
     ...Inst_percusionCategory_default,
     ...Inst_electricalCategory_default,
     ...Inst_stringCategory_default
