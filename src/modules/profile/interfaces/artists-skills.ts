@@ -278,12 +278,12 @@ export interface Meta_Artist_I extends SchemaKey_I {
 
 }
 
-const typeArtist_default = [
+export const typeArtist_Type_default = [
     "all",
     "singer",
     "instrumentist",
     "orchestra_director",
     "scene_director",
 ] as const;
-export type userArtist_Type = typeof typeArtist_default[number];
+export type userArtist_Type = typeof typeArtist_Type_default[number];
 

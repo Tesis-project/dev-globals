@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Instrumentist_categories_default = exports.Instrumentist_position_default = exports.Instrumentist_specialty_default = exports.DO_specialty_default = exports.DO_repertoire_default = exports.SD_specialty_default = exports.SD_repertoire_default = exports.voiceType_default = exports.voiceSpecialty_default = void 0;
+exports.typeArtist_Type_default = exports.Instrumentist_categories_default = exports.Instrumentist_position_default = exports.Instrumentist_specialty_default = exports.DO_specialty_default = exports.DO_repertoire_default = exports.SD_specialty_default = exports.SD_repertoire_default = exports.voiceType_default = exports.voiceSpecialty_default = void 0;
 exports.voiceSpecialty_default = [
     "singer_specialty_opera",
     "singer_specialty_zarzuela",
@@ -214,7 +214,7 @@ exports.Instrumentist_categories_default = [
     ...Inst_electricalCategory_default,
     ...Inst_stringCategory_default
 ];
-const typeArtist_default = [
+exports.typeArtist_Type_default = [
     "all",
     "singer",
     "instrumentist",
