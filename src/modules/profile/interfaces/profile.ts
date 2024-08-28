@@ -26,7 +26,6 @@ import { MetaRole_I } from "./metaRole";
         youtube?: string;
         tiktok?: string;
         linkedin?: string;
-
     };
 
     user: User_I | string;

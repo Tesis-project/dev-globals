@@ -155,39 +155,39 @@ const Inst_windWoodCategory_default = [
 export type Inst_windWoodCategory_Type = typeof Inst_windWoodCategory_default[number];
 
 const Inst_percusionCategory_default = [
- "instrument_percussion_arab",
-"instrument_percussion_brazilian",
-"instrument_percussion_cuban",
-"instrument_percussion_folk",
-"instrument_percussion_hindu",
-"instrument_percussion_latin",
-"instrument_percussion_oriental",
-"instrument_percussion_symphonic",
-"instrument_percussion_piano",
-"instrument_percussion_marimba",
-"instrument_percussion_vibraphone",
-"instrument_percussion_xylophone",
-"instrument_percussion_timpani",
+    "instrument_percussion_arab",
+    "instrument_percussion_brazilian",
+    "instrument_percussion_cuban",
+    "instrument_percussion_folk",
+    "instrument_percussion_hindu",
+    "instrument_percussion_latin",
+    "instrument_percussion_oriental",
+    "instrument_percussion_symphonic",
+    "instrument_percussion_piano",
+    "instrument_percussion_marimba",
+    "instrument_percussion_vibraphone",
+    "instrument_percussion_xylophone",
+    "instrument_percussion_timpani",
 ] as const;
 export type Inst_percusionCategory_Type = typeof Inst_percusionCategory_default[number];
 
 const Inst_electricalCategory_default = [
-"instrument_electrical_bass",
-"instrument_electrical_guitar",
-"instrument_electrical_piano",
-"instrument_electrical_synthesizer",
-"instrument_electrical_violin",
+    "instrument_electrical_bass",
+    "instrument_electrical_guitar",
+    "instrument_electrical_piano",
+    "instrument_electrical_synthesizer",
+    "instrument_electrical_violin",
 ] as const;
 export type Inst_electricalCategory_Type = typeof Inst_electricalCategory_default[number];
 
 const Inst_stringCategory_default = [
-"instrument_string_harp",
-"instrument_string_classicGuitar",
-"instrument_string_bass",
-"instrument_string_viola",
-"instrument_string_violin",
-"instrument_string_cello",
-"instrument_string_others",
+    "instrument_string_harp",
+    "instrument_string_classicGuitar",
+    "instrument_string_bass",
+    "instrument_string_viola",
+    "instrument_string_violin",
+    "instrument_string_cello",
+    "instrument_string_others",
 ] as const;
 export type Inst_stringCategory_Type = typeof Inst_stringCategory_default[number];
 
@@ -277,3 +277,13 @@ export interface Meta_Artist_I extends SchemaKey_I {
     updated_at?: Date;
 
 }
+
+const typeArtist_default = [
+    "all",
+    "singer",
+    "instrumentist",
+    "orchestra_director",
+    "scene_director",
+] as const;
+export type userArtist_Type = typeof typeArtist_default[number];
+

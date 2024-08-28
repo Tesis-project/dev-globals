@@ -55,4 +55,6 @@ export interface Meta_Artist_I extends SchemaKey_I {
     meta_role: MetaRole_I | string;
     updated_at?: Date;
 }
+declare const typeArtist_default: readonly ["all", "singer", "instrumentist", "orchestra_director", "scene_director"];
+export type userArtist_Type = typeof typeArtist_default[number];
 export {};

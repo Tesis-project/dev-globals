@@ -214,4 +214,11 @@ exports.Instrumentist_categories_default = [
     ...Inst_electricalCategory_default,
     ...Inst_stringCategory_default
 ];
+const typeArtist_default = [
+    "all",
+    "singer",
+    "instrumentist",
+    "orchestra_director",
+    "scene_director",
+];
 //# sourceMappingURL=artists-skills.js.map

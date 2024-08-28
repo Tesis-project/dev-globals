@@ -3,13 +3,13 @@ import { MetaRole_I } from "./metaRole";
 export interface InstitutesCompanies_I {
     name: string;
     rif_nif: string;
+    position: string;
+    phone: string;
     direction?: {
         address: string;
         city: string;
         state: string;
     };
-    position: string;
-    phone: string;
 }
 export interface Meta_Contratist_I extends SchemaKey_I {
     institutes_companies: InstitutesCompanies_I;
