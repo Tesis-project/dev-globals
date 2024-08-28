@@ -17,6 +17,7 @@ class SearchUser_Dto {
 }
 exports.SearchUser_Dto = SearchUser_Dto;
 __decorate([
+    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsIn)(interfaces_1.typeArtist_Type_default),
     __metadata("design:type", String)
 ], SearchUser_Dto.prototype, "type", void 0);

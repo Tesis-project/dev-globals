@@ -5,8 +5,9 @@ import { typeArtist_Type_default, userArtist_Type } from "../../profile/interfac
 
 export class SearchUser_Dto {
 
+    @IsOptional()
     @IsIn(typeArtist_Type_default)
-    type: userArtist_Type;
+    type?: userArtist_Type;
 
     @ValidateIf(o => o.term !== '' && o.term !== null && o.term !== undefined)
     @IsOptional()
