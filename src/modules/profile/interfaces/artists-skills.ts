@@ -287,3 +287,9 @@ export const typeArtist_Type_default = [
 ] as const;
 export type userArtist_Type = typeof typeArtist_Type_default[number];
 
+export enum Artist_Enum {
+    SINGER = "SINGER",
+    INSTRUMENTIST = "INSTRUMENTIST",
+    ORQUESTA_DIRECTOR = "ORQUESTA_DIRECTOR",
+    SCENE_DIRECTOR = "SCENE_DIRECTOR",
+}

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.typeArtist_Type_default = exports.Instrumentist_categories_default = exports.Instrumentist_position_default = exports.Instrumentist_specialty_default = exports.DO_specialty_default = exports.DO_repertoire_default = exports.SD_specialty_default = exports.SD_repertoire_default = exports.voiceType_default = exports.voiceSpecialty_default = void 0;
+exports.Artist_Enum = exports.typeArtist_Type_default = exports.Instrumentist_categories_default = exports.Instrumentist_position_default = exports.Instrumentist_specialty_default = exports.DO_specialty_default = exports.DO_repertoire_default = exports.SD_specialty_default = exports.SD_repertoire_default = exports.voiceType_default = exports.voiceSpecialty_default = void 0;
 exports.voiceSpecialty_default = [
     "singer_specialty_opera",
     "singer_specialty_zarzuela",
@@ -221,4 +221,11 @@ exports.typeArtist_Type_default = [
     "orchestra_director",
     "scene_director",
 ];
+var Artist_Enum;
+(function (Artist_Enum) {
+    Artist_Enum["SINGER"] = "SINGER";
+    Artist_Enum["INSTRUMENTIST"] = "INSTRUMENTIST";
+    Artist_Enum["ORQUESTA_DIRECTOR"] = "ORQUESTA_DIRECTOR";
+    Artist_Enum["SCENE_DIRECTOR"] = "SCENE_DIRECTOR";
+})(Artist_Enum || (exports.Artist_Enum = Artist_Enum = {}));
 //# sourceMappingURL=artists-skills.js.map

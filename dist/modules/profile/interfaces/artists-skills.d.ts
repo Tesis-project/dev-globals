@@ -57,4 +57,10 @@ export interface Meta_Artist_I extends SchemaKey_I {
 }
 export declare const typeArtist_Type_default: readonly ["all", "singer", "instrumentist", "orchestra_director", "scene_director"];
 export type userArtist_Type = typeof typeArtist_Type_default[number];
+export declare enum Artist_Enum {
+    SINGER = "SINGER",
+    INSTRUMENTIST = "INSTRUMENTIST",
+    ORQUESTA_DIRECTOR = "ORQUESTA_DIRECTOR",
+    SCENE_DIRECTOR = "SCENE_DIRECTOR"
+}
 export {};
