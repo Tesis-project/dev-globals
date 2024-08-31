@@ -25,9 +25,10 @@ export interface Vacant_I extends SchemaKey_I {
     desc: string;
     status: Vacants_Enum;
     created_at?: Date;
+    updated_at?: Date;
     operation: {
         start_at: Date;
-        end_at?: Date;
+        end_at: Date;
     };
     role_desc: string;
     role_type: Artist_Enum[];

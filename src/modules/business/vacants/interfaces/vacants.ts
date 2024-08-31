@@ -34,9 +34,11 @@ export interface Vacant_I extends SchemaKey_I {
     status: Vacants_Enum;
 
     created_at?: Date;
+    updated_at?: Date;
+
     operation: {
         start_at: Date;
-        end_at?: Date;
+        end_at: Date;
     };
 
     role_desc: string;
