@@ -15,20 +15,6 @@ const class_validator_1 = require("class-validator");
 const interfaces_1 = require("../../../../core/interfaces");
 const interfaces_2 = require("../interfaces");
 const interfaces_3 = require("../../../profile/interfaces");
-class Direction_Dto {
-}
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], Direction_Dto.prototype, "address", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], Direction_Dto.prototype, "city", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], Direction_Dto.prototype, "state", void 0);
 class Vacant_Transport_Dto {
 }
 __decorate([
@@ -108,6 +94,20 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", Date)
 ], Vacant_Operation_Dto.prototype, "end_at", void 0);
+class Direction_Dto {
+}
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], Direction_Dto.prototype, "address", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], Direction_Dto.prototype, "city", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], Direction_Dto.prototype, "state", void 0);
 class Create_Vacant_Dto {
 }
 exports.Create_Vacant_Dto = Create_Vacant_Dto;
@@ -199,5 +199,6 @@ __decorate([
         "currency": "USD"
     },
     "specific_conditions": "Condiciones especificas"
-} */ 
+}
+*/ 
 //# sourceMappingURL=Create-vacant.dto.js.map

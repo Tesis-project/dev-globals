@@ -1,11 +1,6 @@
 import { Currency_Enum } from '../../../../core/interfaces';
 import { Vacant_Transport_Enum, Vacant_Housing_Enum } from '../interfaces';
 import { Artist_Enum } from '../../../profile/interfaces';
-declare class Direction_Dto {
-    address: string;
-    city: string;
-    state: string;
-}
 declare class Vacant_Transport_Dto {
     enable: boolean;
     type: Vacant_Transport_Enum;
@@ -29,6 +24,11 @@ declare class Vacant_Budget_Payment_Dto {
 declare class Vacant_Operation_Dto {
     start_at: Date;
     end_at: Date;
+}
+declare class Direction_Dto {
+    address: string;
+    city: string;
+    state: string;
 }
 export declare class Create_Vacant_Dto {
     title: string;

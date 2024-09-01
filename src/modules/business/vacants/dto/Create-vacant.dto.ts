@@ -4,18 +4,7 @@ import { Currency_Enum } from '../../../../core/interfaces';
 import { Vacant_Transport_Enum, Vacant_Housing_Enum } from '../interfaces';
 import { Artist_Enum } from '../../../profile/interfaces';
 
-class Direction_Dto {
 
-    @IsString()
-    address: string;
-
-    @IsString()
-    city: string;
-
-    @IsString()
-    state: string;
-
-}
 
 class Vacant_Transport_Dto {
 
@@ -89,6 +78,19 @@ class Vacant_Operation_Dto {
 
     @IsString()
     end_at: Date;
+
+}
+
+class Direction_Dto {
+
+    @IsString()
+    address: string;
+
+    @IsString()
+    city: string;
+
+    @IsString()
+    state: string;
 
 }
 
@@ -173,4 +175,5 @@ export class Create_Vacant_Dto {
         "currency": "USD"
     },
     "specific_conditions": "Condiciones especificas"
-} */
+}
+*/
