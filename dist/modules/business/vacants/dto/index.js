@@ -18,4 +18,5 @@ __exportStar(require("./Update-vacant.dto"), exports);
 __exportStar(require("./Create-vacant.dto"), exports);
 __exportStar(require("./Create-postulation.dto"), exports);
 __exportStar(require("./Update-postulation.dto"), exports);
+__exportStar(require("./Search-vacant.dto"), exports);
 //# sourceMappingURL=index.js.map

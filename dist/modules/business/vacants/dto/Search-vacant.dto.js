@@ -9,15 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Update_Vacant_Dto = void 0;
-const mapped_types_1 = require("@nestjs/mapped-types");
-const _1 = require(".");
+exports.Search_Vacant_Dto = void 0;
 const class_validator_1 = require("class-validator");
-class Update_Vacant_Dto extends (0, mapped_types_1.PartialType)(_1.Create_Vacant_Dto) {
+const interfaces_1 = require("../../../profile/interfaces");
+class Search_Vacant_Dto {
 }
-exports.Update_Vacant_Dto = Update_Vacant_Dto;
+exports.Search_Vacant_Dto = Search_Vacant_Dto;
 __decorate([
-    (0, class_validator_1.IsUUID)(4, { message: 'Invalid UUID' }),
+    (0, class_validator_1.IsIn)(interfaces_1.typeArtist_Type_default),
     __metadata("design:type", String)
-], Update_Vacant_Dto.prototype, "_id", void 0);
-//# sourceMappingURL=Update-vacant.dto.js.map
+], Search_Vacant_Dto.prototype, "type", void 0);
+//# sourceMappingURL=Search-vacant.dto.js.map
