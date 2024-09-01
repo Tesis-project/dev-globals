@@ -1,1 +1,1 @@
-{"version":3,"file":"Create-postulation.dto.js","sourceRoot":"","sources":["../../../../../src/modules/business/vacants/dto/Create-postulation.dto.ts"],"names":[],"mappings":";;;AAEA,MAAa,sBAAsB;CAIlC;AAJD,wDAIC"}
+{"version":3,"file":"Create-postulation.dto.js","sourceRoot":"","sources":["../../../../../src/modules/business/vacants/dto/Create-postulation.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qDAAuD;AAGvD,MAAa,sBAAsB;CAMlC;AAND,wDAMC;AAFG;IAFC,IAAA,4BAAU,GAAE;IACZ,IAAA,0BAAQ,GAAE;;uDACM"}
