@@ -22,6 +22,7 @@ export enum Vacant_Housing_Enum {
     APARTMENT = "APARTMENT",
     HOUSE = "HOUSE",
     ROOM = "ROOM",
+    HOTEL = "HOTEL",
     SHARED = "SHARED",
 }
 

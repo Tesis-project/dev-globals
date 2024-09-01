@@ -10,10 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Update_Vacant_Dto = void 0;
-const mapped_types_1 = require("@nestjs/mapped-types");
-const _1 = require(".");
 const class_validator_1 = require("class-validator");
-class Update_Vacant_Dto extends (0, mapped_types_1.PartialType)(_1.Create_Vacant_Dto) {
+class Update_Vacant_Dto {
 }
 exports.Update_Vacant_Dto = Update_Vacant_Dto;
 __decorate([

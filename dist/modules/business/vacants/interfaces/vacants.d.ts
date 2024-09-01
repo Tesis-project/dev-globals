@@ -17,6 +17,7 @@ export declare enum Vacant_Housing_Enum {
     APARTMENT = "APARTMENT",
     HOUSE = "HOUSE",
     ROOM = "ROOM",
+    HOTEL = "HOTEL",
     SHARED = "SHARED"
 }
 export interface Vacant_I extends SchemaKey_I {

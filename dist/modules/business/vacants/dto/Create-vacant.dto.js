@@ -163,4 +163,41 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], Create_Vacant_Dto.prototype, "specific_conditions", void 0);
+/* let aux_create: Create_Vacant_Dto =
+{
+    "title": "Titulo vacante",
+    "desc": "Descripcion vacante",
+    "direction": {
+        "address": "Calle falsa 123",
+        "city": "Springfield",
+        "state": "Springfield"
+    },
+    "operation": {
+        "start_at": "2024-08-31 20:36:57+00",
+        "end_at": "2024-08-31 20:36:57+00"
+    },
+    "role_type": ["SINGER"],
+    "role_desc": "Descripcion del rol",
+    "transport_service": {
+        "enable": true,
+        "type": "LAND",
+        "desc": "Descripcion del servicio de transporte"
+    },
+    "housing_service": {
+        "enable": true,
+        "type": "HOTEL",
+        "desc": "Descripcion del servicio de hospedaje"
+    },
+    "vacant_costs": {
+        "enable": true,
+        "desc": "Descripcion de los costos",
+        "total": 500,
+        "currency": "USD"
+    },
+    "vacant_payment": {
+        "total": 1000,
+        "currency": "USD"
+    },
+    "specific_conditions": "Condiciones especificas"
+} */ 
 //# sourceMappingURL=Create-vacant.dto.js.map
