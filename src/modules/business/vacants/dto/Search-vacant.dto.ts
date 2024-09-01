@@ -1,10 +1,12 @@
 
-import { IsOptional, IsIn } from "class-validator";
-import { typeArtist_Type_default, userArtist_Type } from "../../../profile/interfaces";
+import { IsEnum } from "class-validator";
+import { Artist_Enum } from "../../../profile/interfaces";
 
 export class Search_Vacant_Dto {
 
-    @IsIn(typeArtist_Type_default)
-    type: userArtist_Type;
+    @IsEnum(Artist_Enum, {
+        message: `Type must be one of the following values: ${{ ...Artist_Enum }}`
+    })
+    type: Artist_Enum;
 
 }

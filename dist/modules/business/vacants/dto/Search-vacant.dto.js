@@ -16,7 +16,9 @@ class Search_Vacant_Dto {
 }
 exports.Search_Vacant_Dto = Search_Vacant_Dto;
 __decorate([
-    (0, class_validator_1.IsIn)(interfaces_1.typeArtist_Type_default),
+    (0, class_validator_1.IsEnum)(interfaces_1.Artist_Enum, {
+        message: `Type must be one of the following values: ${{ ...interfaces_1.Artist_Enum }}`
+    }),
     __metadata("design:type", String)
 ], Search_Vacant_Dto.prototype, "type", void 0);
 //# sourceMappingURL=Search-vacant.dto.js.map
