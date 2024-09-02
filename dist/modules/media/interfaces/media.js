@@ -41,6 +41,8 @@ var Media_Reference_Enum;
     Media_Reference_Enum["PROFILE_CREDENTIAL_PROFESSIONAL"] = "PROFILE_CREDENTIALS_PROFESSIONAL";
     Media_Reference_Enum["PROFILE_MEDIA_VIDEO_GALLERY"] = "PROFILE_MEDIA_VIDEO_GALLERY";
     Media_Reference_Enum["PROFILE_MEDIA_IMAGE_GALLERY"] = "PROFILE_MEDIA_IMAGE_GALLERY";
+    Media_Reference_Enum["VACANT_PIC"] = "VACANT_PIC";
+    Media_Reference_Enum["VACANT_CONTRACT_DOCUMENT"] = "VACANT_CONTRACT_DOCUMENT";
 })(Media_Reference_Enum || (exports.Media_Reference_Enum = Media_Reference_Enum = {}));
 /*
 const Media_Format_Enum = {
