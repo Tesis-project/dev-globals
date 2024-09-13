@@ -292,4 +292,13 @@ export enum Artist_Enum {
     INSTRUMENTIST = "INSTRUMENTIST",
     ORQUESTA_DIRECTOR = "ORQUESTA_DIRECTOR",
     SCENE_DIRECTOR = "SCENE_DIRECTOR",
+    ALL = "ALL",
 }
+
+// export enum SearchVacant_Enum {
+//     SINGER = "SINGER",
+//     INSTRUMENTIST = "INSTRUMENTIST",
+//     ORQUESTA_DIRECTOR = "ORQUESTA_DIRECTOR",
+//     SCENE_DIRECTOR = "SCENE_DIRECTOR",
+//     ALL = "ALL",
+// }

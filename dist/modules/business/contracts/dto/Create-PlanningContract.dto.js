@@ -9,16 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Search_Vacant_Dto = void 0;
+exports.Create_PlanningContract_Dto = void 0;
 const class_validator_1 = require("class-validator");
-const interfaces_1 = require("../../../profile/interfaces");
-class Search_Vacant_Dto {
+class Create_PlanningContract_Dto {
 }
-exports.Search_Vacant_Dto = Search_Vacant_Dto;
+exports.Create_PlanningContract_Dto = Create_PlanningContract_Dto;
 __decorate([
-    (0, class_validator_1.IsEnum)(interfaces_1.Artist_Enum, {
-        message: `Type vacant must be one of the following values: ${{ ...interfaces_1.Artist_Enum }}`
-    }),
+    (0, class_validator_1.IsUUID)(),
     __metadata("design:type", String)
-], Search_Vacant_Dto.prototype, "type", void 0);
-//# sourceMappingURL=Search-vacant.dto.js.map
+], Create_PlanningContract_Dto.prototype, "postulation_id", void 0);
+//# sourceMappingURL=Create-PlanningContract.dto.js.map

@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Search_Vacant_Dto = void 0;
+exports.Update_DetailsContract_Dto = void 0;
 const class_validator_1 = require("class-validator");
-const interfaces_1 = require("../../../profile/interfaces");
-class Search_Vacant_Dto {
+const interfaces_1 = require("../interfaces");
+class Update_DetailsContract_Dto {
 }
-exports.Search_Vacant_Dto = Search_Vacant_Dto;
+exports.Update_DetailsContract_Dto = Update_DetailsContract_Dto;
 __decorate([
-    (0, class_validator_1.IsEnum)(interfaces_1.Artist_Enum, {
-        message: `Type vacant must be one of the following values: ${{ ...interfaces_1.Artist_Enum }}`
+    (0, class_validator_1.IsEnum)(interfaces_1.Contract_DetailType_Enum, {
+        message: `Type vacant must be one of the following values: ${{ ...interfaces_1.Contract_DetailType_Enum }}`
     }),
     __metadata("design:type", String)
-], Search_Vacant_Dto.prototype, "type", void 0);
-//# sourceMappingURL=Search-vacant.dto.js.map
+], Update_DetailsContract_Dto.prototype, "type", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsUUID)(),
+    __metadata("design:type", String)
+], Update_DetailsContract_Dto.prototype, "payment_account", void 0);
+//# sourceMappingURL=Update-DetailsContract.dto.js.map

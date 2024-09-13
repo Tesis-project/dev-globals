@@ -227,5 +227,13 @@ var Artist_Enum;
     Artist_Enum["INSTRUMENTIST"] = "INSTRUMENTIST";
     Artist_Enum["ORQUESTA_DIRECTOR"] = "ORQUESTA_DIRECTOR";
     Artist_Enum["SCENE_DIRECTOR"] = "SCENE_DIRECTOR";
+    Artist_Enum["ALL"] = "ALL";
 })(Artist_Enum || (exports.Artist_Enum = Artist_Enum = {}));
+// export enum SearchVacant_Enum {
+//     SINGER = "SINGER",
+//     INSTRUMENTIST = "INSTRUMENTIST",
+//     ORQUESTA_DIRECTOR = "ORQUESTA_DIRECTOR",
+//     SCENE_DIRECTOR = "SCENE_DIRECTOR",
+//     ALL = "ALL",
+// }
 //# sourceMappingURL=artists-skills.js.map

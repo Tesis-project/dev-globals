@@ -6,7 +6,7 @@ export class Evaluate_Postulation_Dto {
 
     @IsOptional()
     @IsString()
-    owner_comment: string;
+    owner_comment?: string;
 
     @IsEnum(Vacant_Postulation_Status_Enum, {
         message: `Status must be one of the following values: ${{ ...Vacant_Postulation_Status_Enum }}`

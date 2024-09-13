@@ -63,12 +63,3 @@ export interface Media_I extends SchemaKey_I {
 
 }
 
-
-/*
-const Media_Format_Enum = {
-    ...Media_Image_Format_Enum,
-    ...Media_Video_Format_Enum,
-    ...Media_Document_Format_Enum
-} as const;
-
-type Media_Format_Enum = typeof Media_Format_Enum[keyof typeof Media_Format_Enum]; */

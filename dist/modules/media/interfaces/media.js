@@ -44,12 +44,4 @@ var Media_Reference_Enum;
     Media_Reference_Enum["VACANT_PIC"] = "VACANT_PIC";
     Media_Reference_Enum["VACANT_CONTRACT_DOCUMENT"] = "VACANT_CONTRACT_DOCUMENT";
 })(Media_Reference_Enum || (exports.Media_Reference_Enum = Media_Reference_Enum = {}));
-/*
-const Media_Format_Enum = {
-    ...Media_Image_Format_Enum,
-    ...Media_Video_Format_Enum,
-    ...Media_Document_Format_Enum
-} as const;
-
-type Media_Format_Enum = typeof Media_Format_Enum[keyof typeof Media_Format_Enum]; */ 
 //# sourceMappingURL=media.js.map

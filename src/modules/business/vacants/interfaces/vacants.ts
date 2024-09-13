@@ -28,15 +28,12 @@ export enum Vacant_Housing_Enum {
 
 export interface Vacant_I extends SchemaKey_I {
 
+
     vacant_pic?: Media_I;
+    status: Vacants_Enum;
 
     title: string;
     desc: string;
-    status: Vacants_Enum;
-
-    created_at?: Date;
-    updated_at?: Date;
-
     operation: {
         start_at: Date;
         end_at: Date;
@@ -62,6 +59,10 @@ export interface Vacant_I extends SchemaKey_I {
     owner: User_I | string;
     postulations?: Vacant_Postulation_I[]
     contract?: any | string;
+
+    created_at?: Date;
+    updated_at?: Date;
+
 
 }
 
