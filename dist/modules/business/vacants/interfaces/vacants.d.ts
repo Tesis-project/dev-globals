@@ -2,6 +2,7 @@ import { Currency_Enum, SchemaKey_I } from "../../../../core/interfaces";
 import { Media_I } from "../../../media/interfaces";
 import { Artist_Enum } from "../../../profile/interfaces";
 import { User_I } from "../../../user/interfaces";
+import { Contract_I } from "../../contracts/interfaces";
 import { Vacant_Postulation_I } from "./postulation";
 export declare enum Vacants_Enum {
     OPEN = "OPEN",
@@ -43,7 +44,7 @@ export interface Vacant_I extends SchemaKey_I {
     specific_conditions?: string;
     owner: User_I | string;
     postulations?: Vacant_Postulation_I[];
-    contract?: any | string;
+    contract?: Contract_I | string;
     created_at?: Date;
     updated_at?: Date;
 }
