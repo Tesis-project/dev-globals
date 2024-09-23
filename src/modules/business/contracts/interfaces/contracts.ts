@@ -45,7 +45,6 @@ export interface Contract_Details_I {
 
 export interface Contract_I extends SchemaKey_I {
 
-
     contratist: Contract_Sign_I;
     contractor: Contract_Sign_I;
 
@@ -59,3 +58,4 @@ export interface Contract_I extends SchemaKey_I {
     updated_at?: Date;
 
 }
+

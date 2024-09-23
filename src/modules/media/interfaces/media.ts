@@ -2,12 +2,7 @@
 import { SchemaKey_I } from "../../../core/interfaces";
 import { User_I } from "../../user/interfaces";
 
-export enum Media_Type_Enum {
 
-    IMAGE = "IMAGE",
-    VIDEO = "VIDEO",
-    DOCUMENT = "DOCUMENT",
-}
 
 export enum Media_Image_Format_Enum {
     JPG = "JPG",
@@ -46,6 +41,13 @@ export enum Media_Reference_Enum {
     VACANT_PIC = "VACANT_PIC",
     VACANT_CONTRACT_DOCUMENT = "VACANT_CONTRACT_DOCUMENT"
 
+}
+
+export enum Media_Type_Enum {
+
+    IMAGE = "IMAGE",
+    VIDEO = "VIDEO",
+    DOCUMENT = "DOCUMENT",
 }
 
 export interface Media_I extends SchemaKey_I {

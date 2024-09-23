@@ -24,3 +24,8 @@ export interface Meta_Contratist_I extends SchemaKey_I {
     updated_at?: Date;
 
 }
+
+
+
+
+//

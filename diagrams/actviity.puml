@@ -1,0 +1,475 @@
+@startuml
+title Diagrama de Actividad sin sesión de usuario
+|ns| Frontend - Sin sesión de usuario
+start
+split
+    :HomePage;
+    |ns|
+    stop
+split again
+    :Vacantes públicadas;
+    :Ver información de vacantes;
+    |ns|
+    stop
+split again
+    :Búsqueda de usuarios;
+    :Buscar por tipo o por texto;
+    :Ver perfil de usuario;
+    |ns|
+    stop
+split again
+    |ns|
+    :Registro de usuario;
+    repeat :Ingresar datos;
+    :Definir rol;
+    |#AntiqueWhite|api| Backend Api
+    :Verificar si el email existe;
+    backward:Retorna mensaje de error;
+    repeat while (¿Existe?) is (Si) not (No)
+    :Crea cuenta y emite email de verificación;
+    stop
+split again
+    |ns|
+    :Iniciar sesión;
+    repeat :Ingresar credenciales;
+    |#AntiqueWhite|api| Backend Api
+    :Verificación de datos;
+    backward:Retorna mensaje de error;
+    repeat while (¿Datos válidos?) is (No) not (Si)
+    :Retorna inicio de sesión;
+    stop
+end split
+
+@enduml
+
+
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista | Contratista ) 01
+|ns| Frontend - Con Sesión de usuario
+start
+split
+    :Visualizar notificaciones;
+    stop
+split again
+    :Realizar configuraciones de cuenta;
+    :Realizar configuraciones personales;
+    split
+        :Definir datos personales;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe datos;
+        |ns|
+        :Retorna mensaje de confirmación;
+    split again
+        repeat :Definir foto de perfil y portada;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe datos;
+        :Válida formato y requisitos;
+        :Almacena los elementos;
+        backward:Retorna mensaje de error;
+        repeat while (Proceso completo) is (No) not (Si)
+        |ns|
+        :Retorna mensaje de confirmación;
+
+    end split
+end split
+stop
+@enduml
+
+
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista | Contratista ) 02
+|ns| Frontend - Con Sesión de usuario
+start
+:Realizar configuraciones de cuenta;
+:Realizar configuraciones profesionales;
+:Definir Redes sociales;
+:Escribir reseña biográfica;
+|#AntiqueWhite|api| Backend Api
+repeat:Recibe datos;
+:Válida formato y requisitos;
+:Almacena los elementos;
+backward:Retorna mensaje de error;
+repeat while (Proceso completo) is (No) not (Si)
+|ns|
+:Retorna mensaje de confirmación;
+stop
+@enduml
+
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista | Contratista ) 03
+|ns| Frontend - Con Sesión de usuario
+start
+:Realizar configuraciones de cuenta;
+:Definir contenido audio visual;
+split
+    repeat :Añadir o eliminar contenido galería de videos;
+    |#AntiqueWhite|api| Backend Api
+    :Maneja archivos;
+    :Válida solicitud;
+    :Almacena o elimina los elementos;
+    backward:Retorna mensaje de error;
+    repeat while (Proceso completo) is (No) not (Si)
+    |ns|
+    :Retorna mensaje de confirmación;
+split again
+    repeat :Añadir o eliminar contenido galería de imágenes;
+    |#AntiqueWhite|api| Backend Api
+    :Maneja archivos;
+    :Válida solicitud;
+    :Almacena o elimina los elementos;
+    backward:Retorna mensaje de error;
+    repeat while (Proceso completo) is (No) not (Si)
+    |ns|
+    :Retorna mensaje de confirmación;
+
+end split
+stop
+@enduml
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista | Contratista ) 04
+|ns| Frontend - Con Sesión de usuario
+start
+:Realizar configuraciones de cuenta;
+:Definir documentación de credenciales;
+split
+    repeat :Añadir o eliminar documento de identidad;
+    |#AntiqueWhite|api| Backend Api
+    :Maneja archivo;
+    :Válida solicitud;
+    :Almacena o elimina el elemento;
+    backward:Retorna mensaje de error;
+    repeat while (Proceso completo) is (No) not (Si)
+    |ns|
+    :Retorna mensaje de confirmación;
+split again
+    repeat :Añadir o eliminar credencial profesional;
+    |#AntiqueWhite|api| Backend Api
+    :Maneja archivo;
+    :Válida solicitud;
+    :Almacena o elimina el elemento;
+    backward:Retorna mensaje de error;
+    repeat while (Proceso completo) is (No) not (Si)
+    |ns|
+    :Retorna mensaje de confirmación;
+
+end split
+stop
+@enduml
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista | Contratista ) 05
+|ns| Frontend - Con Sesión de usuario
+start
+:Realizar configuraciones de cuenta;
+:Hacer configuraciones de seguridad;
+split
+    :Solicitar cambio de email;
+    |#AntiqueWhite|api| Backend Api
+    :Válida solicitud;
+    :Emite email de verificación;
+    |ns|
+    :Retorna mensaje de confirmación;
+split again
+    :Solicitar cambio de contraseña;
+    |#AntiqueWhite|api| Backend Api
+    :Válida solicitud;
+    :Emite email de verificación;
+    |ns|
+    :Retorna mensaje de confirmación;
+
+end split
+stop
+@enduml
+
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista | Contratista ) 06
+|ns| Frontend - Con Sesión de usuario
+start
+:Definición de datos de contratación;
+split
+    :Definir información bancaria;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud;
+    :Guarda información;
+    |ns|
+    :Retorna mensaje de confirmación;
+split again
+    :Definir estatutos;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud;
+    :Guarda información;
+    |ns|
+    :Retorna mensaje de confirmación;
+
+split again
+    :Definir información de empresa;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud;
+    :Guarda información;
+    |ns|
+    :Retorna mensaje de confirmación;
+
+end split
+stop
+@enduml
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista | Contratista ) 07
+|ns| Frontend - Con Sesión de usuario
+start
+:Consultar información de contratos;
+split
+    :Consultar información de vacante de contrato;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud;
+    :Retorna información;
+    |ns|
+    :Recibe información de contratos;
+split again
+    :Ver pre visualización de contrato;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud;
+    :Retorna documento;
+    |ns|
+    :Recibe visualización de documento pdf;
+
+end split
+stop
+@enduml
+
+
+
+' De administrador
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Administrador ) 01
+|ns| Frontend - Administrador
+start
+split
+    :Visualizar notificaciones;
+    stop
+split again
+    :Realizar configuraciones de cuenta;
+    :Realizar configuraciones personales;
+    split
+        :Definir datos personales;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe datos;
+        |ns|
+        :Retorna mensaje de confirmación;
+    split again
+        repeat :Definir foto de perfil y portada;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe datos;
+        :Válida formato y requisitos;
+        :Almacena los elementos;
+        backward:Retorna mensaje de error;
+        repeat while (Proceso completo) is (No) not (Si)
+        |ns|
+        :Retorna mensaje de confirmación;
+
+    end split
+end split
+stop
+@enduml
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Administrador ) 02
+|ns| Frontend - Administrador
+start
+:Realizar configuraciones de cuenta;
+:Hacer configuraciones de seguridad;
+split
+    :Solicitar cambio de email;
+    |#AntiqueWhite|api| Backend Api
+    :Válida solicitud;
+    :Emite email de verificación;
+    |ns|
+    :Retorna mensaje de confirmación;
+split again
+    :Solicitar cambio de contraseña;
+    |#AntiqueWhite|api| Backend Api
+    :Válida solicitud;
+    :Emite email de verificación;
+    |ns|
+    :Retorna mensaje de confirmación;
+
+end split
+stop
+@enduml
+
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Administrador ) 03
+|ns| Frontend - Administrador
+start
+split
+    :Consultar información de vacantes publicadas;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud;
+    :Retorna información;
+    |ns|
+    :Recibe información;
+split again
+    :Consultar información de usuarios registrados;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud;
+    :Retorna información;
+    |ns|
+    :Recibe información;
+split again
+    :Consultar información de contratos;
+    split
+        :Consultar información de vacantes de contratos;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe solicitud;
+        :Retorna información;
+        |ns|
+        :Recibe información de contratos;
+    split again
+        :Ver pre visualización de contrato;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe solicitud;
+        :Retorna documento;
+        |ns|
+        :Recibe visualización de documento pdf;
+
+    end split
+end split
+stop
+@enduml
+
+
+' Artista
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Artista ) 01
+|ns| Frontend - Artista
+start
+
+    split
+    :Realizar configuraciones de cuenta;
+    :Definir habilidades o capacidades artisticas;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud de guardado
+    de capacidades;
+    :Guarda información;
+    |ns|
+    :Retorna mensaje de confirmación
+    guardado de capacidades;
+    split again
+        :Visitar vacantes publicadas;
+        :Postularse con un mensaje opcional;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe solicitud de guardado
+        de postulación;
+        :Guarda información;
+        |ns|
+        :Retorna mensaje de confirmación
+        de postulación;
+    split again
+        :Consultar información de contratos;
+        split
+            :Aceptar/firmar contrato;
+            |#AntiqueWhite|api| Backend Api
+            :Recibe solicitud de aceptación;
+            :Guarda información;
+            |ns|
+            :Retorna mensaje de aprobación
+            de contrato;
+        split again
+            :Rechazar contrato;
+            |#AntiqueWhite|api| Backend Api
+            :Recibe solicitud de rechazo;
+            :Guarda información;
+            |ns|
+            :Retorna mensaje de rechazo
+            de contrato;
+        end split
+    end split
+stop
+@enduml
+
+
+' Contratist
+
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Contratista ) 01
+|ns| Frontend - Contratista
+start
+
+    split
+    :Realizar configuraciones de cuenta;
+    :Definir información de empresa a representar;
+    |#AntiqueWhite|api| Backend Api
+    :Recibe solicitud de guardado
+    de empresa;
+    :Guarda información;
+    |ns|
+    :Retorna mensaje de confirmación
+    guardado de datos de empresa;
+
+    split again
+    :Visitar vacantes personales publicadas;
+    split
+        :Crear/Editar/Eliminar vacante;
+         |#AntiqueWhite|api| Backend Api
+        :Recibe solicitud de
+        manejo manejo de vacante;
+        :Válida información;
+        |ns|
+        :Retorna mensaje de
+        manejo de vacante completado;
+
+    split again
+        :Evaluación de postulaciones;
+        :Crear planificación de un contrato;
+        |#AntiqueWhite|api| Backend Api
+        :Recibe solicitud de creación
+        de contrato;
+        :Guarda información;
+        |ns|
+        :Retorna mensaje de
+        de contrato completado;
+
+    end split
+    end split
+
+|ns|
+stop
+@enduml
+
+@startuml
+title Diagrama de Actividad con sesión de usuario ( Contratista ) 02
+|ns| Frontend - Contratista
+start
+
+    :Consultar información de contratos;
+    split
+        :Definir método de pago;
+        :Enviar propuesta de contrato;
+        |#AntiqueWhite|api| Backend Api
+        :Válida información;
+        :Recibe solicitud de
+        envio de propuesta de contrato;
+        |ns|
+        :Retorna mensaje de
+        envio de propuesta exitoso;
+    split again
+        :Eliminar contrato;
+        |#AntiqueWhite|api| Backend Api
+        :Válida información;
+        :Recibe solicitud de
+        eliminación de contrato;
+        |ns|
+        :Retorna mensaje de
+        eliminación realizada;
+    end split
+stop
+@enduml
