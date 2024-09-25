@@ -1,0 +1,53 @@
+
+
+Base de datos: melodify_auth
+Tabla: auth
+Descripcioín:
+
+
+
+
+auth:
+Tabla que almacena la información de autenticación de los usuarios, incluyendo el correo electrónico, contraseña, rol (artista o contratista), estado de la cuenta (activa, suspendida, etc.), y la última sesión registrada.
+
+auth_requests:
+Almacena las solicitudes de autenticación de los usuarios, como la confirmación de cuenta, el restablecimiento de contraseña o el cambio de correo. También incluye un campo para el estado de la solicitud (pendiente, usada, expirada).
+
+user:
+Almacena información básica de los usuarios, como nombre, apellido, género, teléfono y referencias a su autenticación y perfil. Esta tabla es fundamental para gestionar a los usuarios dentro del sistema.
+
+user_bank_data:
+Guarda la información bancaria de los usuarios, como el tipo de cuenta (banco o pago móvil), el nombre del banco, número de cuenta, titular, y el identificador de la persona. Se usa principalmente en las relaciones contractuales para realizar pagos.
+
+user_hiring_data:
+Almacena la información relacionada con los datos de contratación de un usuario, vinculando las contrataciones con el perfil del usuario.
+
+user_personal_data:
+Contiene información personal del usuario, como dirección, ciudad, teléfono, código postal, razón social y cualquier condición específica que deba tenerse en cuenta para procesos contractuales o administrativos.
+
+profile:
+Tabla que almacena el perfil de los usuarios, incluyendo nombre artístico, biografía corta, fotos de perfil y de portada, credenciales, galerías de imágenes y videos, así como enlaces a redes sociales. Está conectada con el usuario correspondiente.
+
+profile_meta_role:
+Almacena la información adicional o metadatos relacionados con el perfil del usuario, como roles específicos o capacidades particulares que pueden tener artistas o contratistas.
+
+user_meta_artist:
+Esta tabla almacena los datos y habilidades específicas de los artistas, como especialidades de voz, categorías de instrumentos, habilidades de dirección de orquestas o escenarios. Sirve para detallar el perfil profesional de los artistas.
+
+user_meta_contratist:
+Contiene información detallada de los contratistas, como los institutos o empresas a los que pertenecen, su rol dentro de las mismas, y los datos de contacto. Es clave para identificar y gestionar a los contratistas en el sistema.
+
+media:
+Almacena información sobre archivos multimedia, como imágenes, documentos y videos. Incluye detalles como el tipo de archivo, formato, ruta en la nube, referencia al usuario que lo subió y otros metadatos necesarios para gestionar los archivos.
+
+notifications:
+Gestiona las notificaciones del sistema para los usuarios. Incluye el asunto, mensaje, estado (leído o no leído), y la fecha de creación y lectura. Las notificaciones pueden ser de varios tipos, como verificación de cuenta o cambio de contraseña.
+
+contracts:
+Tabla que gestiona la relación contractual entre contratistas y artistas. Almacena los detalles del contrato, las firmas de ambas partes, el estado del contrato (planeación, en progreso, cancelado, etc.), y una referencia a la vacante asociada.
+
+postulations:
+Almacena las postulaciones de los artistas a las vacantes laborales publicadas por los contratistas. Incluye el comentario del postulante, el estado de la postulación (enviada, aceptada, rechazada, etc.), y una referencia a la vacante a la que aplica.
+
+vacants:
+Gestiona las vacantes laborales publicadas por los contratistas. Contiene información detallada de la vacante, como título, descripción, estado (abierta, cerrada, expirada), rango de fechas de la oferta, servicios adicionales (transporte, alojamiento) y la información del propietario de la vacante.

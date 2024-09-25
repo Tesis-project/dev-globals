@@ -1,0 +1,1175 @@
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_auth</h1>
+    <h3>Tabla: auth</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de la autenticación.</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Correo electrónico del usuario.</td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Contraseña cifrada del usuario.</td>
+    </tr>
+    <tr>
+      <td>username</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Nombre de usuario opcional para la autenticación.</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de creación del registro.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de la última actualización del registro.</td>
+    </tr>
+    <tr>
+      <td>last_session</td>
+      <td>TIMESTAMPTZ</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Fecha y hora de la última sesión del usuario.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Estado de la cuenta. Ej: 'NONE', 'VERIFIED', 'NOT', 'BLOCKED', 'DELETED', 'SUSPENDED', 'PENDING', 'ACTIVE', 'INACTIVE'.</td>
+    </tr>
+    <tr>
+      <td>role</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Rol del usuario. Ej: 'ARTIST_ROLE', 'CONTRATIST_ROLE', 'ADMIN_ROLE'.</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Referencia al identificador del usuario relacionado en la tabla <b>"user"</b> de la base de datos <b>"melodify_user"</b> perteneciente al micro servicio <b>"User-MS"</b> .</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+    <h1>Base de datos: melodify_auth</h1>
+    <h3>Tabla: auth_requests</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de la solicitud de autenticación.</td>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Clave única asociada a la solicitud.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Tipo de solicitud Ej: 'CONFIRM_ACCOUNT', 'RESET_PASSWORD', 'CHANGE_EMAIL'.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Estado de la solicitud Ej: 'PENDING', 'USED', 'EXPIRED'.</td>
+    </tr>
+    <tr>
+      <td>detail</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Detalles adicionales de la solicitud.</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de creación de la solicitud.</td>
+    </tr>
+    <tr>
+      <td>used_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Fecha y hora en que la solicitud fue utilizada.</td>
+    </tr>
+    <tr>
+      <td>auth__id (Foranea de auth)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>ID de autenticación relacionado con la tabla <b>"auth"</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_user</h1>
+    <h3>Tabla: user</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único del usuario.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Nombre del usuario.</td>
+    </tr>
+    <tr>
+      <td>last_name</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Apellido del usuario.</td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Género del usuario. Ej: 'MALE', 'FEMALE', 'NONE'.</td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Número de teléfono del usuario.</td>
+    </tr>
+    <tr>
+      <td>direction</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Dirección del usuario en formato JSON.</td>
+    </tr>
+    <tr>
+      <td>auth</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>Sí (UNIQUE)</td>
+        <td>Referencia al identificador de autenticación relacionado en la tabla <b>"auth"</b> de la base de datos <b>"melodify_auth"</b> perteneciente al micro servicio <b>"Auth-MS"</b> .</td>
+
+    </tr>
+    <tr>
+      <td>profile</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>Sí (UNIQUE)</td>
+              <td>Referencia al identificador de perfil relacionado en la tabla <b>"profile"</b> de la base de datos <b>"melodify_profile"</b> perteneciente al micro servicio <b>"Profile-MS"</b> .</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de la última actualización del usuario.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_user</h1>
+    <h3>Tabla: user_bank_data</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de la información bancaria.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Tipo de cuenta. Ej: 'BANK_ACCOUNT', 'MOBILE_PAYMENT'.</td>
+    </tr>
+    <tr>
+      <td>bank_name</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Nombre del banco. Ej: 'BC_BICENTENARIO', 'BC_BANESCO', 'BC_TESORO', 'BC_PROVINCIAL', 'BC_MERCANTIL', 'BC_VENEZUELA'.</td>
+    </tr>
+    <tr>
+      <td>number</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Número de la cuenta bancaria.</td>
+    </tr>
+    <tr>
+      <td>titular</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Nombre del titular de la cuenta.</td>
+    </tr>
+    <tr>
+      <td>person_id</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Cédula o identificación personal del titular de la cuenta.</td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Teléfono del titular de la cuenta.</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de creación del registro bancario.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de la última actualización del registro bancario.</td>
+    </tr>
+    <tr>
+      <td>hiring_data__id (Foranea de user_hiring_data)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Referencia a los datos de contratación del usuario, relacionado con la tabla <b>user_hiring_data</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_user</h1>
+    <h3>Tabla: user_hiring_data</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de los datos de contratación del usuario.</td>
+    </tr>
+    <tr>
+      <td>user__id (Foranea de user)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Referencia al identificador del usuario, relacionado con la tabla <b>user</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_user</h1>
+    <h3>Tabla: user_personal_data</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de los datos personales del usuario.</td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Dirección del usuario.</td>
+    </tr>
+    <tr>
+      <td>city</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Ciudad de residencia del usuario.</td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Teléfono del usuario.</td>
+    </tr>
+    <tr>
+      <td>postal_code</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Código postal del usuario.</td>
+    </tr>
+    <tr>
+      <td>rif</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>RIF o identificación fiscal del usuario.</td>
+    </tr>
+    <tr>
+      <td>social_reason</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Razón social del usuario, si aplica.</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Estado o región del usuario.</td>
+    </tr>
+    <tr>
+      <td>specific_conditions</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Condiciones específicas o notas adicionales.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de la última actualización de los datos personales.</td>
+    </tr>
+    <tr>
+      <td>hiring_data__id (Foranea de user_hiring_data)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Referencia a los datos de contratación del usuario, relacionado con la tabla <b>user_hiring_data</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_profile</h1>
+    <h3>Tabla: profile</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único del perfil del usuario.</td>
+    </tr>
+    <tr>
+      <td>artistic_name</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Nombre artístico del usuario, si aplica.</td>
+    </tr>
+    <tr>
+      <td>bio_short</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Descripción corta o biografía del usuario.</td>
+    </tr>
+    <tr>
+      <td>profile_pic</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+                 <td>Referencia al identificador de media relacionado en la tabla <b>"media"</b> de la base de datos <b>"melodify_media"</b> perteneciente al micro servicio <b>"Media-MS"</b>.</td>
+    </tr>
+    <tr>
+      <td>cover_pic</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+                 <td>Referencia al identificador de media relacionado en la tabla <b>"media"</b> de la base de datos <b>"melodify_media"</b> perteneciente al micro servicio <b>"Media-MS"</b>.</td>
+    </tr>
+    <tr>
+      <td>credentials</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Archivos de credenciales (identidad, profesional) en formato JSON.</td>
+    </tr>
+    <tr>
+      <td>media</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Galería de imágenes y videos del usuario en formato JSON.</td>
+    </tr>
+    <tr>
+      <td>socials</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Redes sociales del usuario (TikTok, Twitter, YouTube, etc.) en formato JSON.</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Referencia al identificador de usuario relacionado en la tabla <b>"user"</b> de la base de datos <b>"melodify_user"</b> perteneciente al micro servicio <b>"User-MS"</b>.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de la última actualización del perfil.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_profile</h1>
+    <h3>Tabla: profile_meta_role</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único del rol meta del perfil.</td>
+    </tr>
+    <tr>
+      <td>profile__id (Foranea de profile)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Referencia al identificador de perfil, relacionado con la tabla <b>profile</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_profile</h1>
+    <h3>Tabla: user_meta_artist</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único del artista en la meta del usuario.</td>
+    </tr>
+    <tr>
+      <td>skills</td>
+      <td>JSONB</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Habilidades del artista, como cantante, instrumentista, director de orquesta o escena en formato JSON.</td>
+    </tr>
+    <tr>
+      <td>meta_role__id (Foranea de profile_meta_role)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+         <td>Referencia al identificador de meta información, relacionado con la tabla <b>profile_meta_role</b>.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de la última actualización de las habilidades.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+
+    <h1>Base de datos: melodify_profile</h1>
+    <h3>Tabla: user_meta_contratist</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único del contratista en la meta del usuario.</td>
+    </tr>
+    <tr>
+      <td>institutes_companies</td>
+      <td>JSONB</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Información sobre empresas o instituciones en formato JSON.</td>
+    </tr>
+    <tr>
+      <td>meta_role__id (Foranea de profile_meta_role)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+      <td>Referencia al rol meta del perfil del usuario.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Referencia al identificador de meta información, relacionado con la tabla <b>profile_meta_role</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+    <h1>Base de datos: melodify_media</h1>
+    <h3>Tabla: media</h3>
+
+ <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único del archivo multimedia.</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Nombre del archivo multimedia.</td>
+    </tr>
+    <tr>
+      <td>folder</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Directorio o ruta donde está almacenado el archivo.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Tipo de archivo. Ej: 'IMAGE', 'VIDEO', 'DOCUMENT'</td>
+    </tr>
+    <tr>
+      <td>format</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Formato del archivo. Ej: 'JPG', 'JPEG', 'PNG', 'MP4', 'PDF', 'DOC', 'DOCX'</td>
+    </tr>
+    <tr>
+      <td>src</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Ruta de acceso al archivo en la nube o en el servidor.</td>
+    </tr>
+    <tr>
+      <td>reference</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>
+        Referencia del archivo. Ej: 'PROFILE_PROFILE_PIC', 'PROFILE_COVER_PIC', 'PROFILE_CREDENTIALS_IDENTITY', 'PROFILE_CREDENTIALS_PROFESSIONAL', 'PROFILE_MEDIA_VIDEO_GALLERY', 'PROFILE_MEDIA_IMAGE_GALLERY', 'VACANT_PIC', 'VACANT_CONTRACT_DOCUMENT'
+      </td>
+    </tr>
+    <tr>
+      <td>reference_id</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Identificador de referencia para relacionar el archivo con su entidad.</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Referencia al identificador de usuario relacionado en la tabla <b>"user"</b> de la base de datos <b>"melodify_user"</b> perteneciente al micro servicio <b>"User-MS"</b>.</td>
+    </tr>
+    <tr>
+      <td>cloud_file_id</td>
+      <td>VARCHAR(255)</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+      <td>ID del archivo en el servicio de almacenamiento en la nube.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora de la última actualización del archivo.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+    <h1>Base de datos: melodify_notifications</h1>
+    <h3>Tabla: notifications</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de la notificación.</td>
+    </tr>
+    <tr>
+      <td>subject</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Asunto o título de la notificación.</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Mensaje de la notificación enviado al usuario.</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Estado de la notificación Ej: 'READ', 'UNREAD'.</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha y hora en que se creó la notificación.</td>
+    </tr>
+    <tr>
+      <td>read_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Fecha y hora en que se leyó la notificación.</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+     <td>Referencia al identificador de usuario relacionado en la tabla <b>"user"</b> de la base de datos <b>"melodify_user"</b> perteneciente al micro servicio <b>"User-MS"</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+    <h1>Base de datos: melodify_business</h1>
+    <h3>Tabla: contracts</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único del contrato.</td>
+    </tr>
+    <tr>
+      <td>contratist</td>
+      <td>JSONB</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Información del contratista (firma y datos).</td>
+    </tr>
+    <tr>
+      <td>contractor</td>
+      <td>JSONB</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Información del artista contratado (firma y datos).</td>
+    </tr>
+    <tr>
+      <td>details</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Detalles adicionales del contrato (opcional).</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Estado del contrato. Ej: 'PLANNING', 'SINGS_PENDING', 'IN_PROGRESS', 'CANCELLED', 'COMPLETED'</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha de creación del contrato.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha de la última actualización del contrato.</td>
+    </tr>
+    <tr>
+      <td>vacant__id (Foranea de vacants)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>Sí (UNIQUE)</td>
+            <td>Referencia al identificador de vacantes, relacionado con la tabla <b>vacants</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+    <h1>Base de datos: melodify_business</h1>
+    <h3>Tabla: postulations</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de la postulación.</td>
+    </tr>
+    <tr>
+      <td>comment</td>
+      <td>TEXT</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Comentario opcional del postulante.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Estado de la postulación. Ej: 'SENDED', 'ON_HOLD', 'ACCEPTED', 'CONTRACT_SENT', 'REFUSED'</td>
+    </tr>
+    <tr>
+      <td>owner_comment</td>
+      <td>TEXT</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Comentario opcional del dueño de la vacante.</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha de creación de la postulación.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha de la última actualización de la postulación.</td>
+    </tr>
+    <tr>
+      <td>vacant__id (Foranea de vacants)</td>
+      <td>UUID</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Referencia al identificador de vacantes, relacionado con la tabla <b>vacants</b>.</td>
+    </tr>
+    <tr>
+      <td>user_postulate</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+           <td>Referencia al identificador de usuario relacionado en la tabla <b>"user"</b> de la base de datos <b>"melodify_user"</b> perteneciente al micro servicio <b>"User-MS"</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+<div style="background-color: #eef2ff; padding: 5px 15px 15px">
+    <h1>Base de datos: melodify_business</h1>
+    <h3>Tabla: vacants</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Columna</th>
+      <th>Tipo</th>
+      <th>Nulo</th>
+      <th>Único</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_id (Primary)</td>
+      <td>UUID</td>
+      <td>No</td>
+      <td>Sí (PK)</td>
+      <td>Identificador único de la vacante.</td>
+    </tr>
+    <tr>
+      <td>vacant_pic</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+        <td>Referencia al identificador de media relacionado en la tabla <b>"media"</b> de la base de datos <b>"melodify_media"</b> perteneciente al micro servicio <b>"Media-MS"</b>.</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Título de la vacante.</td>
+    </tr>
+    <tr>
+      <td>desc</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Descripción detallada de la vacante.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Estado de la vacante. Ej: 'OPEN', 'CLOSED', 'EXPIRED', 'INPROGRESS'</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha de creación de la vacante.</td>
+    </tr>
+    <tr>
+      <td>updated_at</td>
+      <td>TIMESTAMPTZ</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Fecha de la última actualización de la vacante.</td>
+    </tr>
+    <tr>
+      <td>operation</td>
+      <td>JSONB</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Información del rango de fechas (inicio y fin) de la operación.</td>
+    </tr>
+    <tr>
+      <td>role_desc</td>
+      <td>TEXT</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Descripción del rol necesario para la vacante.</td>
+    </tr>
+    <tr>
+      <td>role_type</td>
+      <td>JSONB</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Tipos de rol permitidos. Ej: ['SINGER', 'INSTRUMENTIST']</td>
+    </tr>
+    <tr>
+      <td>transport_service</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Información sobre el servicio de transporte (opcional).</td>
+    </tr>
+    <tr>
+      <td>housing_service</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Información sobre el servicio de hospedaje (opcional).</td>
+    </tr>
+    <tr>
+      <td>vacant_costs</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Costos asociados a la vacante (opcional).</td>
+    </tr>
+    <tr>
+      <td>vacant_payment</td>
+      <td>JSONB</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Información del pago total. Ej: {"total": 0, "currency": "USD"}</td>
+    </tr>
+    <tr>
+      <td>direction</td>
+      <td>JSONB</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Dirección de la vacante (opcional).</td>
+    </tr>
+    <tr>
+      <td>specific_conditions</td>
+      <td>TEXT</td>
+      <td>Sí</td>
+      <td>No</td>
+      <td>Condiciones específicas de la vacante (opcional).</td>
+    </tr>
+    <tr>
+      <td>owner</td>
+      <td>VARCHAR(255)</td>
+      <td>No</td>
+      <td>No</td>
+           <td>Referencia al identificador de usuario relacionado en la tabla <b>"user"</b> de la base de datos <b>"melodify_user"</b> perteneciente al micro servicio <b>"User-MS"</b>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+

@@ -1,0 +1,297 @@
+// melodify_auth
+Enum auth_status {
+  NONE
+  VERIFIED
+  NOT
+  BLOCKED
+  DELETED
+  SUSPENDED
+  PENDING
+  ACTIVE
+  INACTIVE
+}
+
+Enum auth_role {
+  ARTIST_ROLE
+  CONTRATIST_ROLE
+  ADMIN_ROLE
+}
+
+Enum auth_requests_type {
+  CONFIRM_ACCOUNT
+  RESET_PASSWORD
+  CHANGE_EMAIL
+}
+
+Enum auth_requests_status {
+  PENDING
+  USED
+  EXPIRED
+}
+
+Table auth {
+  _id UUID [pk]
+  email VARCHAR(255) [unique]
+  password VARCHAR(255)
+  username VARCHAR(255)
+  created_at TIMESTAMPTZ
+  updated_at TIMESTAMPTZ
+  last_session TIMESTAMPTZ
+  status auth_status
+  role auth_role
+  user VARCHAR(255)
+}
+
+Table auth_requests {
+  _id UUID [pk]
+  key VARCHAR(255)
+  type auth_requests_type
+  status auth_requests_status
+  detail VARCHAR(255)
+  created_at TIMESTAMPTZ
+  used_at TIMESTAMPTZ
+  auth__id UUID
+}
+
+Ref: auth_requests.auth__id > auth._id
+
+// ----------------------------------------
+
+// melodify_user
+Enum gender {
+  MALE
+  FEMALE
+  NONE
+}
+
+Enum user_bank_data_type {
+  BANK_ACCOUNT
+  MOBILE_PAYMENT
+}
+
+Enum user_bank_data_bank_name {
+  BC_BICENTENARIO
+  BC_BANESCO
+  BC_TESORO
+  BC_PROVINCIAL
+  BC_MERCANTIL
+  BC_VENEZUELA
+}
+
+Table user {
+  _id UUID [pk]
+  name VARCHAR(255)
+  last_name VARCHAR(255)
+  gender gender [default: 'NONE']
+  phone VARCHAR(255)
+  direction JSONB
+  auth VARCHAR(255) [unique]
+  profile VARCHAR(255) [unique]
+  updated_at TIMESTAMPTZ [default: '2024-07-12 06:19:40+00']
+}
+
+Table user_bank_data {
+  _id UUID [pk]
+  type user_bank_data_type
+  bank_name user_bank_data_bank_name
+  number VARCHAR(255)
+  titular VARCHAR(255)
+  person_id VARCHAR(255)
+  phone VARCHAR(255)
+  created_at TIMESTAMPTZ [default: '2024-07-12 06:19:40+00']
+  updated_at TIMESTAMPTZ [default: '2024-07-12 06:19:40+00']
+  hiring_data__id UUID
+}
+
+Table user_hiring_data {
+  _id UUID [pk]
+  user__id UUID [unique]
+}
+
+Table user_personal_data {
+  _id UUID [pk]
+  address VARCHAR(255) [default: '']
+  city VARCHAR(255) [default: '']
+  phone VARCHAR(255) [default: '']
+  postal_code VARCHAR(255) [default: '']
+  rif VARCHAR(255) [default: '']
+  social_reason VARCHAR(255) [default: '']
+  state VARCHAR(255) [default: '']
+  updated_at TIMESTAMPTZ [default: '2024-07-12 06:19:40+00']
+  hiring_data__id UUID [unique]
+  specific_conditions VARCHAR(255) [default: '']
+}
+
+Ref: user_bank_data.hiring_data__id > user_hiring_data._id
+Ref: user_hiring_data.user__id > user._id
+Ref: user_personal_data.hiring_data__id > user_hiring_data._id
+
+// ----------------------------------------
+// Profile
+
+Table profile {
+  _id UUID [pk]
+  artistic_name VARCHAR(255)
+  bio_short VARCHAR(255)
+  profile_pic JSONB
+  cover_pic JSONB
+  credentials JSONB [default: '{"identity_file": {}, "profesional_file": {}}']
+  media JSONB [default: '{"image_gallery": [], "video_gallery": []}']
+  socials JSONB [default: '{"tiktok": "", "twitter": "", "youtube": "", "facebook": "", "instagram": ""}']
+  user VARCHAR(255) [unique]
+  updated_at TIMESTAMPTZ [default: '2024-07-27 08:19:57+00']
+}
+
+Table profile_meta_role {
+  _id UUID [pk]
+  profile__id UUID [unique]
+}
+
+Table user_meta_artist {
+  _id UUID [pk]
+  skills JSONB [default: '{"singer": {"voice_type": [], "voice_specialty": []}, "instrumentist": {"position": [], "specialty": [], "categories": []}, "scenes_director": {"specialty": [], "repertoire": []}, "orquests_director": {"specialty": [], "repertoire": []}}']
+  meta_role__id UUID [unique]
+  updated_at TIMESTAMPTZ [default: '2024-07-27 08:19:57+00']
+}
+
+Table user_meta_contratist {
+  _id UUID [pk]
+  institutes_companies JSONB [default: '{"name": "", "phone": "", "rif_nif": "", "position": "", "direction": {"city": "", "state": "", "address": ""}}']
+  meta_role__id UUID [unique]
+  updated_at TIMESTAMPTZ [default: '2024-07-27 08:19:57+00']
+}
+
+Ref: profile_meta_role.profile__id > profile._id
+Ref: user_meta_artist.meta_role__id > profile_meta_role._id
+Ref: user_meta_contratist.meta_role__id > profile_meta_role._id
+
+// ----------------------------------------
+
+// melodify_media
+Enum media_type {
+  IMAGE
+  VIDEO
+  DOCUMENT
+}
+
+Enum media_format {
+  JPG
+  JPEG
+  PNG
+  MP4
+  PDF
+  DOC
+  DOCX
+}
+
+Enum media_reference {
+  PROFILE_PROFILE_PIC
+  PROFILE_COVER_PIC
+  PROFILE_CREDENTIALS_IDENTITY
+  PROFILE_CREDENTIALS_PROFESSIONAL
+  PROFILE_MEDIA_VIDEO_GALLERY
+  PROFILE_MEDIA_IMAGE_GALLERY
+  VACANT_PIC
+  VACANT_CONTRACT_DOCUMENT
+}
+
+Table media {
+  _id UUID [pk]
+  file VARCHAR(255)
+  folder VARCHAR(255)
+  type media_type
+  format media_format
+  src VARCHAR(255)
+  reference media_reference
+  reference_id VARCHAR(255)
+  user VARCHAR(255)
+  cloud_file_id VARCHAR(255) [unique]
+  updated_at TIMESTAMPTZ [default: '2024-09-02 10:38:15+00']
+}
+
+// ----------------------------------------
+// melodify_notifications
+Enum notifications_state {
+  READ
+  UNREAD
+}
+
+Table notifications {
+  _id UUID [pk]
+  subject VARCHAR(255)
+  message VARCHAR(255)
+  state notifications_state [default: 'UNREAD']
+  created_at TIMESTAMPTZ [default: '2024-07-19 17:30:47+00']
+  read_at TIMESTAMPTZ [default: '2024-07-19 17:30:47+00']
+  user VARCHAR(255)
+}
+
+// ----------------------------------------
+// melodify_business
+Enum contracts_status {
+  PLANNING
+  SINGS_PENDING
+  IN_PROGRESS
+  CANCELLED
+  COMPLETED
+}
+
+Enum postulations_status {
+  SENDED
+  ON_HOLD
+  ACCEPTED
+  CONTRACT_SENT
+  REFUSED
+}
+
+Enum vacants_status {
+  OPEN
+  CLOSED
+  EXPIRED
+  INPROGRESS
+}
+
+Table contracts {
+  _id UUID [pk]
+  contratist JSONB
+  contractor JSONB
+  details JSONB
+  status contracts_status [default: 'PLANNING']
+  created_at TIMESTAMPTZ [default: '2024-09-13 11:15:56+00']
+  updated_at TIMESTAMPTZ [default: '2024-09-13 11:15:56+00']
+  vacant__id UUID [unique]
+}
+
+Table postulations {
+  _id UUID [pk]
+  comment TEXT
+  status postulations_status [default: 'SENDED']
+  owner_comment TEXT
+  created_at TIMESTAMPTZ [default: '2024-09-13 11:15:56+00']
+  updated_at TIMESTAMPTZ [default: '2024-09-13 11:15:56+00']
+  vacant__id UUID
+  user_postulate VARCHAR(255)
+}
+
+Table vacants {
+  _id UUID [pk]
+  vacant_pic JSONB
+  title VARCHAR(255)
+  desc TEXT
+  status vacants_status [default: 'OPEN']
+  created_at TIMESTAMPTZ [default: '2024-09-13 11:15:56+00']
+  updated_at TIMESTAMPTZ [default: '2024-09-13 11:15:56+00']
+  operation JSONB [default: '{"end_at": "", "start_at": ""}']
+  role_desc TEXT
+  role_type JSONB [default: '["SINGER"]']
+  transport_service JSONB
+  housing_service JSONB
+  vacant_costs JSONB
+  vacant_payment JSONB [default: '{"total": 0, "currency": "USD"}']
+  direction JSONB
+  specific_conditions TEXT
+  owner VARCHAR(255)
+}
+
+Ref: contracts.vacant__id > vacants._id
+Ref: postulations.vacant__id > vacants._id
