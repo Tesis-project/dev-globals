@@ -1,0 +1,542 @@
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Visita pública - Registro de usuario</td>
+      <td><b>Nro de prueba:</b> Nr.001</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Visita pública - Usuario visitante</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 20/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>No tener sesión de usuario activa</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>Nombre, Apellido, Email, Rol, Contraseña, Confirmación de contraseña</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Registro de usuario:</b><br>
+        1. Accede a la plataforma<br>
+        2. Navega hacia la página de registro de usuario<br>
+        3. Ingresa la información en los campos solicitados<br>
+        4. Define el rol deseado (Artista | Contratista)<br>
+        5. Define contraseña y su confirmación<br>
+        6. Presiona el botón Enviar
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Se recibe mensaje de confirmación de registro realizado<br>
+        2. Se recibe email a la dirección de correo especificada para verificar la cuenta<br>
+        3. Se redirecciona a la página de Iniciar sesión
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Visita pública - Inicio sesión</td>
+      <td><b>Nro de prueba:</b> Nr.002</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Visita pública - Usuario visitante</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 20/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>No tener sesión de usuario activa, haber creado previamente una cuenta de usuario</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>Email, Contraseña</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Iniciar sesión:</b><br>
+        1. Accede a la plataforma<br>
+        2. Navega hacia la página de Iniciar sesión<br>
+        3. Ingresa la información en los campos solicitados<br>
+        4. Presiona el botón Ingresar
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Recibe notificación de acceso aprobado<br>
+        2. Se almacena la sesión en localstorage<br>
+        3. Se habilita el panel de usuario y menú de usuario
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Usuario - Panel de usuario - Realizar configuraciones de cuenta</td>
+      <td><b>Nro de prueba:</b> Nr.003</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Sesión iniciada - Artista/Contratista - Panel de usuario - Configuraciones personales</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 21/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>Tener sesión de usuario activa, ser artista o contratista</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>Nombre, Apellido, Teléfono, Género, Dirección, Ciudad, Estado, Foto de perfil, Foto de portada</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Definir foto de perfil:</b><br>
+        1. Iniciar sesión<br>
+        2. Navegar hacia el panel de usuario -> Perfil y configuraciones -> Personal<br>
+        3. Clickear botón de cambiar foto de perfil<br>
+        4. Seleccionar foto<br>
+        5. Se auto guarda al seleccionar<br>
+        <b>Definir foto de portada:</b><br>
+        1. Iniciar sesión<br>
+        2. Navegar hacia el panel de usuario -> Perfil y configuraciones -> Personal<br>
+        3. Clickear botón de cambiar foto de portada<br>
+        4. Seleccionar foto<br>
+        5. Se auto guarda al seleccionar<br>
+        <b>Definir datos personales:</b><br>
+        1. Iniciar sesión<br>
+        2. Navegar hacia el panel de usuario -> Perfil y configuraciones -> Personal<br>
+        3. Ingresar información (Nombre, Apellido, Teléfono, Género, Dirección, Ciudad, Estado)<br>
+        4. Presionar el botón Guardar
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Notificación de proceso completado<br>
+        2. Información de datos personales completado
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Usuario - Panel de usuario - Realizar configuraciones de cuenta</td>
+      <td><b>Nro de prueba:</b> Nr.004</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Sesión iniciada - Artista/Contratista - Panel de usuario - Definir documentación de credenciales</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 21/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>Tener sesión de usuario activa, ser artista o contratista</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>Documento de identidad, Constancia profesional del cargo</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Definir Doc. Identidad:</b><br>
+        1. Iniciar sesión<br>
+        2. Navegar hacia el panel de usuario -> Perfil y configuraciones -> Credenciales<br>
+        3. Clickear botón "Documento de identidad"<br>
+        4. Seleccionar documento pdf<br>
+        5. Se auto guarda al seleccionar<br>
+        <b>Definir Constancia profesional:</b><br>
+        1. Iniciar sesión<br>
+        2. Navegar hacia el panel de usuario -> Perfil y configuraciones -> Credenciales<br>
+        3. Clickear botón "Constancia profesional"<br>
+        4. Seleccionar documento pdf<br>
+        5. Se auto guarda al seleccionar
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Notificación de proceso completado<br>
+        2. Información de credenciales completada
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Contratista - Panel de usuario</td>
+      <td><b>Nro de prueba:</b> Nr.005</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Sesión iniciada - Contratista - Panel de usuario</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 22/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>Tener sesión de usuario activa y ser contratista</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>Titulo, Descripción, Dirección, Ciudad, Estado, Foto de vacante (Flyer), Rol de interés, Descripción de rol, Servicios incluidos, Fecha o rango de fechas, Monto, Monda, Condiciones especificas adicionales</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Crear vacante</b><br>
+        1. Iniciar sesión siendo contratista<br>
+        2. Navegar hacia la página de vacantes<br>
+        3. Clickear botón "Crear vacante"<br>
+        4. Ingresar información solicitada<br>
+        5. Presionar botón "Enviar"<br>
+        <b>Editar vacante</b><br>
+        1. Iniciar sesión siendo contratista<br>
+        2. Navegar hacia la página de vacantes<br>
+        3. Acceder a una vacante específica<br>
+        4. Clickear botón "Editar vacante"<br>
+        5. Ingresar información solicitada<br>
+        6. Presionar botón "Enviar"<br>
+        <b>Eliminar vacante</b><br>
+        1. Iniciar sesión siendo contratista<br>
+        2. Navegar hacia la página de vacantes<br>
+        3. Acceder a una vacante específica<br>
+        4. Clickear botón "Eliminar vacante"<br>
+        5. Confirmar acción
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Notificación de proceso completado<br>
+        2. Información de vacante completada según lo requerido
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Contratista - Panel de usuario</td>
+      <td><b>Nro de prueba:</b> Nr.006</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Sesión iniciada - Contratista - Panel de usuario</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 22/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>Tener sesión de usuario activa y ser contratista</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>Decisión de evaluación, Comentario (Opcional)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Evaluación de postulaciones</b><br>
+        1. Iniciar sesión siendo contratista<br>
+        2. Navegar hacia la página de vacantes<br>
+        3. Acceder a una vacante específica<br>
+        4. Visualizar listado de postulaciones<br>
+        5. Evaluar postulación específica ingresando decisión y comentario
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Notificación de proceso completado<br>
+        2. Postulaciones evaluadas según lo requerido
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Contratista - Panel de usuario</td>
+      <td><b>Nro de prueba:</b> Nr.007</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Sesión iniciada - Contratista - Panel de usuario</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 22/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>Tener sesión de usuario activa y ser contratista</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Crear propuesta de contrato</b><br>
+        1. Iniciar sesión siendo contratista<br>
+        2. Navegar hacia la página de vacantes<br>
+        3. Acceder a una vacante con postulaciones evaluadas<br>
+        4. Crear planificación de contrato de una postulación aceptada<br>
+        5. El contrato se genera en base a la información de la vacante<br>
+        <b>Enviar propuesta de contrato</b><br>
+        1. Iniciar sesión siendo contratista<br>
+        2. Navegar hacia la página de vacantes<br>
+        3. Acceder a una vacante con planificación de contrato creada<br>
+        4. Definir o modificar detalles<br>
+        5. Clickear en "Enviar propuesta"
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Notificación de proceso completado<br>
+        2. Contratos gestionados según lo requerido
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>
+
+<div style="background-color: #eef2ff; padding: 15px">
+  <table border="1">
+    <tr>
+      <td><b>Escenario:</b></td>
+      <td>Contratista - Panel de usuario</td>
+      <td><b>Nro de prueba:</b> Nr.008</td>
+    </tr>
+    <tr>
+      <td><b>Caso de uso:</b></td>
+      <td>Sesión iniciada - Artista - Panel de usuario</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Responsable:</b></td>
+      <td>Álvaro Segovia</td>
+      <td><b>Fecha:</b> 23/09/2024</td>
+    </tr>
+    <tr>
+      <td><b>Precondiciones:</b></td>
+      <td>Tener sesión de usuario activa y ser contratista</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Datos de entrada:</b></td>
+      <td>N/A</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Descripción de pasos:</b></td>
+      <td>
+        <b>Aceptar/Firmar propuesta de contrato</b><br>
+        1. Iniciar sesión siendo contratista<br>
+        2. Acceder al panel de usuario -> Lista de contratos<br>
+        3. Acceder a un contrato específico<br>
+        4. Pre visualizar documento pdf (Opcional)<br>
+        5. Click en Aceptar y firmar
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><b>Resultado esperado:</b></td>
+      <td>
+        1. Notificación de proceso completado<br>
+        2. Contrato con firma textual definida<br>
+        3. Contratos aceptados según lo requerido
+      </td>
+      <td>
+        <b>Cumplimiento:</b>
+        <table border="1">
+          <tr>
+            <td>Sí [X]</td>
+            <td>No [ ]</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Resultados obtenidos:</b></td>
+      <td><b>Errores:</b> N/A</td>
+      <td><b>Fallas provocadas:</b> N/A</td>
+    </tr>
+  </table>
+</div>

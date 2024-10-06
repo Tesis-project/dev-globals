@@ -7,12 +7,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
      BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
 
     ClassBorderColor Black
     ClassArrowColor Black
@@ -109,12 +109,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }
@@ -237,12 +237,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }
@@ -359,12 +359,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }
@@ -440,12 +440,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }
@@ -620,12 +620,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }
@@ -675,12 +675,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }
@@ -751,7 +751,6 @@ end note
 
 <!-- Business MS -->
 
-
 @startuml
 
 title Business-MS - Diagrama de clases - Estructura de datos 01
@@ -761,12 +760,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }
@@ -882,12 +881,12 @@ class Vacant_Postulation_I {
 }
 
 Vacant_I ---> Media_I
-Vacant_I ---> Contract_I
+Vacant_I --> Contract_I
 Vacant_I --> Operation_I
 Vacant_I --> Address_I
 Vacant_I ---> Vacants_Enum
-Vacant_I ---> Vacant_Transport_I
-Vacant_I ---> Vacant_Housing_I
+Vacant_I --> Vacant_Transport_I
+Vacant_I --> Vacant_Housing_I
 Vacant_I -> Vacant_Budget_Costs_I
 Vacant_I --> Vacant_Budget_Payment_I
 Vacant_I -> "0..*" Vacant_Postulation_I
@@ -930,12 +929,12 @@ skinparam class {
     BackgroundColor<<Interface>> #F5F5DC
     BorderColor Black
     ArrowColor Black
-    FontSize 12
-    AttributeFontSize 11
-    StereotypeFontSize 12
-    ClassFontSize 12
-    ClassAttributeFontSize 11
-    ClassStereotypeFontSize 12
+    FontSize 15
+    AttributeFontSize 15
+    StereotypeFontSize 15
+    ClassFontSize 15
+    ClassAttributeFontSize 15
+    ClassStereotypeFontSize 15
     ClassBorderColor Black
     ClassArrowColor Black
 }

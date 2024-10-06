@@ -1,0 +1,123 @@
+
+
+Table auth {
+  _id UUID [pk]
+  user VARCHAR(255)
+}
+
+Table auth_requests {
+  _id UUID [pk]
+  auth__id UUID
+}
+
+Ref: auth_requests.auth__id > auth._id
+
+// ----------------------------------------
+
+
+
+Table user {
+  _id UUID [pk]
+  auth VARCHAR(255) [unique]
+  profile VARCHAR(255) [unique]
+}
+
+Table user_bank_data {
+  _id UUID [pk]
+  hiring_data__id UUID
+}
+
+Table user_hiring_data {
+  _id UUID [pk]
+  user__id UUID [unique]
+}
+
+Table user_personal_data {
+  _id UUID [pk]
+  hiring_data__id UUID [unique]
+}
+
+Ref: user_bank_data.hiring_data__id > user_hiring_data._id
+Ref: user_hiring_data.user__id - user._id
+Ref: user_personal_data.hiring_data__id - user_hiring_data._id
+
+// ----------------------------------------
+// Profile
+
+Table profile {
+  _id UUID [pk]
+  user VARCHAR(255) [unique]
+}
+
+Table profile_meta_role {
+  _id UUID [pk]
+  profile__id UUID [unique]
+}
+
+Table user_meta_artist {
+  _id UUID [pk]
+  meta_role__id UUID [unique]
+}
+
+Table user_meta_contratist {
+  _id UUID [pk]
+  meta_role__id UUID [unique]
+}
+
+Ref: profile_meta_role.profile__id > profile._id
+Ref: user_meta_artist.meta_role__id > profile_meta_role._id
+Ref: user_meta_contratist.meta_role__id > profile_meta_role._id
+
+// ----------------------------------------
+
+
+
+
+Table media {
+  _id UUID [pk]
+  user VARCHAR(255)
+}
+
+// ----------------------------------------
+
+Table notifications {
+  _id UUID [pk]
+  user VARCHAR(255)
+}
+
+// ----------------------------------------
+// melodify_business
+
+
+Table contracts {
+  _id UUID [pk]
+  vacant__id UUID [unique]
+}
+
+Table postulations {
+  _id UUID [pk]
+  vacant__id UUID
+  user_postulate VARCHAR(255)
+}
+
+Table vacants {
+  _id UUID [pk]
+  owner VARCHAR(255)
+}
+
+Ref: contracts.vacant__id - vacants._id
+Ref: postulations.vacant__id > vacants._id
+
+Ref: auth.user - user._id
+Ref: user.auth - auth._id
+
+Ref: user.profile - profile._id
+Ref: profile.user - user._id
+
+Ref: notifications.user > user._id
+
+Ref: media.user - user._id
+
+Ref: vacants.owner - user._id
+
+Ref: postulations.user_postulate - user._id
